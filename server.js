@@ -4,6 +4,11 @@ var http = require('http');
 // Importing the httpdispatcher module
 var dispatcher = require('httpdispatcher');
 
+//Importing the File System
+var fs = require('fs');
+
+var path = require("path");
+
 //Lets define a port we want to listen to
 const PORT=8080; 
 
@@ -21,8 +26,19 @@ function handleRequest(request, response){
 
 //For all your static (js/css/images/etc.) set the directory name (relative path)
 dispatcher.setStatic('./resources');
-
-
+ 
+dispatcher.onGet("/", function(request, response) {
+	fs.readFile("./public/index.html", function(err, html) {
+		if(err) {
+			console.error("Error while reading from index.html!");
+			response.end("Server error!");
+		} else {
+			response.writeHeader(200, {'Content-Type': 'text/html'});
+			response.write(html);
+			response.end();
+		}	
+	});
+});
 
 //A sample GET request    
 dispatcher.onGet("/page1", function(req, res) {

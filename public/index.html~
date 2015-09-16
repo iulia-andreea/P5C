@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<title> 
+		Node.JS Project - P5C 
+	</title>
+
+	<head>
+		Welcome!
+		<br><br>
+	</head>
+
+	<body>
+		This is the first page of my program!
+		<br>
+		
+	</body>
+</html>
