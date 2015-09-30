@@ -13,7 +13,7 @@ var options = {
 };
 
 // Importing the httpdispatcher module
-var dispatcher = require('httpdispatcher');
+//var dispatcher = require('httpdispatcher');
 
 var path = require("path");
 
@@ -22,9 +22,10 @@ var express = require('express');
 var app = express();
 app.use(express.static('public'));
 
-//Lets define a port we want to listen to
-const PORT=8080;
+//Defining the ports we want to listen to
 const PORT_S=8081;
+
+var ipaddress = "localhost";
 
 //We need a function which handles requests and send response
 //function handleRequest(request, response){
@@ -36,7 +37,18 @@ const PORT_S=8081;
 //    }
 //}
 
- 
+
+//Create a secured server
+var secure_server = https.createServer(options, app);
+
+var WebSocketServer = require('ws').Server
+    , wsServer = new WebSocketServer({server:secure_server});
+
+secure_server.listen(PORT_S, function(){
+    //Callback triggered when server is successfully listening. Hurray!
+    console.log("Secure server listening on: https://localhost:%s", PORT_S);
+});
+
 app.get("/", function(request, response) {
 	fs.readFile("./public/index.html", function(err, html) {
 		if(err) {
@@ -46,30 +58,27 @@ app.get("/", function(request, response) {
 			response.writeHeader(200, {'Content-Type': 'text/html'});
 			response.write(html);
 			response.end();
-		}	
+		}
+
+        wsServer.clients.forEach(function(x) {
+            x.send("Another client connected");
+        });
 	});
 });
 
-   
-
-//A sample POST request
 app.post("/post1", function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Got Post Data');
 });
 
-//Create a server
-var server = http.createServer(app);
+// WebSocket server
+wsServer.on("connection", function(ws) {
 
-var secure_server = https.createServer(options, app);
+    console.log("connection a");
 
-//Lets start our server
-server.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", PORT);
+    ws.on('message', function(message) {
+        console.log(message);
+    });
 });
 
-secure_server.listen(PORT_S, function(){
-	//Callback triggered when server is successfully listening. Hurray!
-	console.log("Secure server listening on: http://localhost:%s", PORT_S);
-});
+
