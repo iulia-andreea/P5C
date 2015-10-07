@@ -6,99 +6,85 @@ project.currentStyle = {
 };
 
 var ws = new WebSocket('wss://localhost:8081');
+var snake = [];
+var snakeMap = [];
+var i;
+
+function init(){
+    snake.push(new Path.Circle());
+    snakeMap[0] = [];
+}
 
 ws.onopen = function () {
-    console.log("Socket opened!");
+    //console.log("Socket opened!");
+    addLog("Socket opened!");
+    ws.send("Start!");
 };
 ws.onmessage = function (event) {
     console.log(event.data);
+    snakeMap =  JSON.parse(event.data);
 };
 
-var targetX = -1,
-    targetY = -1,
-    velX,
-    velY,
-    thrust = 5,
-    radius = 30,
-    //radiusEyes = 5
-    startCenterX = 400,
-    startCenterY = 200;
-var snake = [];
-//var snakeEyes = [];
-var i;
-
-for (i = 0; i < 50; i += 1) {
-    snake.push(new Path.Circle({
-        center: [startCenterX + i * thrust, startCenterY],
-        radius: radius
-    }));
-}
-
-//snakeEyes.push(new Path.Circle({
-//    center: [startCenterX - 15, startCenterY - 15],
-//    radius: radiusEyes
-//    }));
-//
-//snakeEyes.push(new Path.Circle({
-//    center: [startCenterX - 15, startCenterY + 15],
-//    radius: radiusEyes
-//}));
-//
-//snakeEyes[0].fillColor = "black";
-//snakeEyes[1].fillColor = "black";
-
 function onMouseUp(event) {
-    "use strict";
-    console.log("Mouse up!!");
+    ws.send([event.point.x, event.point.y]);
+//    "use strict";
+//    addLog("Mouse up at: " + event.point + " !!!");
 
-    targetX = event.point.x;
-    targetY = event.point.y;
+    //targetX = event.point.x;
+    //targetY = event.point.y;
     //if (ws.readyState !== 1) {
-        ws.send("Click at: " + event.point);
+    //    ws.send(event.point);
     //}
-
-    //largeCircle.path = path;
-    var tx = targetX - snake[0].position.x,
-        ty = targetY - snake[0].position.y,
-        dist = Math.sqrt(tx * tx + ty * ty);
-
-    velX = (tx / dist) * thrust;
-    velY = (ty / dist) * thrust;
+    //
+    //var tx = targetX - snake[0].position.x,
+    //    ty = targetY - snake[0].position.y,
+    //    dist = Math.sqrt(tx * tx + ty * ty);
+    //
+    //velX = (tx / dist) * thrust;
+    //velY = (ty / dist) * thrust;
 }
-
+//
 function onFrame(event) {
-    "use strict";
-    if (targetX >= 0 && targetY >= 0) {
-        snake[0].position.x += velX;
-        snake[0].position.y += velY;
-        //snakeEyes[0].position.x += velX;
-        //snakeEyes[0].position.y += velY;
-        //snakeEyes[1].position.x += velX;
-        //snakeEyes[1].position.y += velY;
-        for (i = snake.length - 1 ; i > 0 ; i -= 1) {
-            snake[i].position.x = snake[i-1].position.x;
-            snake[i].position.y = snake[i-1].position.y;
-        }
-        if (Math.abs(snake[0].position.x - targetX) <= Math.abs(velX) &&
-            Math.abs(snake[0].position.y - targetY) <= Math.abs(velY)) {
-            targetX = -1;
-            targetY = -1;
-        }
+    var xey;
+    for(i = 0 ; i < snakeMap.length ; i++) {
+        xey = snakeMap[i];
+        snake[i] = new Path.Circle({
+            center : [xey[0], xey[1]],
+            radius : 30
+        });
+        snake[i].fillColor = "turquoise";
     }
+
+    //addLog("Head at : {" + snakeMap[0][0] + ", " + snakeMap[0][1] + "} ");
+
+//    if (targetX >= 0 && targetY >= 0) {
+//        snake[0].position.x += velX;
+//        snake[0].position.y += velY;
+//        //snakeEyes[0].position.x += velX;
+//        //snakeEyes[0].position.y += velY;
+//        //snakeEyes[1].position.x += velX;
+//        //snakeEyes[1].position.y += velY;
+//        for (i = snake.length - 1 ; i > 0 ; i -= 1) {
+//            snake[i].position.x = snake[i-1].position.x;
+//            snake[i].position.y = snake[i-1].position.y;
+//        }
+//        if (Math.abs(snake[0].position.x - targetX) <= Math.abs(velX) &&
+//            Math.abs(snake[0].position.y - targetY) <= Math.abs(velY)) {
+//            targetX = -1;
+//            targetY = -1;
+//        }
+//    }
 }
 
-function sendMessage(){
-    var message = document.getElementById('message').value;
-    ws.send(message);
+function addLog(text) {
+    var obj = document.getElementById("log_area");
+    var txt = document.createTextNode("\n" + text);
+    obj.appendChild(txt);
 }
 
-ws.addEventListener("message", function(event) {
-    // The data is simply the message that we're sending back
-    var msg = event.data;
-
-    // Append the message
-    document.getElementById('log_area').innerHTML += '<br>' + msg;
-});
+function update(){
+    project.clear();
+}
 
 //function onMouseDrag(event) {
 //    largeCircle.position = event.point;
