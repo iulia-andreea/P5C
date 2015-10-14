@@ -4,9 +4,6 @@
 var method = Snake.prototype;
 const RADIUS = 30, LENGTH = 50, THRUST = 5;
 
-function Snake() {
-    this._form = [];
-}
 
 function Snake(x, y) { // 'x' et 'y' sont les coordinees du centre de la tete du snake
     this._form = [];
