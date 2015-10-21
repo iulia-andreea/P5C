@@ -4,7 +4,7 @@
 function client (id) { // 'x' et 'y' sont les coordinees du centre de la tete du snake
     this._id = id;
     //console.log(this._id + "\t" + id);
-    this._click = null;
+    this._click = [];
     this._snake = [];
 };
 

@@ -1,6 +1,7 @@
 /**
  * Created by Iulia on 9/23/2015.
  */
+
 project.currentStyle = {
     fillColor: 'turquoise'
 };
@@ -22,7 +23,7 @@ ws.onopen = function () {
 };
 
 ws.onmessage = function (event) {
-    console.log(event.data);
+    //console.log(event.data);
     //addLog(event.data);
 
     if(isInt(event.data)) {
@@ -33,9 +34,19 @@ ws.onmessage = function (event) {
     }
 };
 
+ws.onclose = function (event) {
+    //todo show close message
+};
+
+ws.onerror = function (event) {
+    //todo show error message
+};
 
 function onMouseUp(event) {
-    ws.send(event.point.x + "," + event.point.y);
+    var point = [];
+    point.push(event.point.x);
+    point.push(event.point.y);
+    ws.send(JSON.stringify(point));
 }
 
 
@@ -43,9 +54,9 @@ function onFrame(event) {
     project.clear();
     var x,
         y;
-    if (rec_data.length <= 0) return;
-    rec_data.forEach(function (attr) {
-        for (i = 0; i < x.length; i++) {
+    if (rec_data.length === 0) return;
+    rec_data.forEach(function (attr) { // iterare serpi
+        for (i = 0; i < attr.length; i++) { // iterare segmente
             x = attr[i][0];
             y = attr[i][1];
             snake[i] = new Path.Circle({

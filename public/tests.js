@@ -50,6 +50,7 @@ function generateRandomSnake(number) {
 
 //  --- TEST IDS ---
 
+
 console.log("isInt(345) = " + isInt("345"));
 console.log("isInt(3dsa) = " + isInt("3dsa"));
 
@@ -57,4 +58,7 @@ function isInt(string) {
     return !isNaN(parseInt(string)) && isFinite(string);
 }
 
-//
+//      --- TEST SPLIT ---
+
+var xey = "123,213".split(",", 2);
+console.log(xey);

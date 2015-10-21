@@ -61,6 +61,9 @@ var clients = [],
     snake = [],
     i;
 
+const CONSOLE_HEIGHT = 520,
+      CONSOLE_LENGTH = 1250;
+
 for (i = 0; i < 50; i ++) {
     var si = [];
     si.push(200 + i * 5);
@@ -77,55 +80,61 @@ wsServer.on("connection", function(ws) {
 	//});
 
     ws.on('message', function(message) {
-        console.log(message);
         switch (message) {
             case "start":
                 var id = clientIndex++;
                 var newClient = new client(id);
                 newClient._snake = generateRandomSnake(id);
-                clients.push(newClient);
+                clients[id] = newClient;
+                ws.id = id;
                 ws.send(id);
                 console.log(newClient);
                 break;
             default :
-                var xey = message.split(",", 2);
-
+                var xey = [];
+                xey = JSON.parse(message);
+                clients[ws.id]._click = xey;
+                console.log(xey);
         }
     });
+    ws.on('error', function(message) {
+        delete clients[ws.id];
+    });
+    ws.on('close', function(message) {
+        delete clients[ws.id];
+    });
 });
-
-//var xs = [200, 400, 400, 200],
-//    ys = [400, 400, 200, 200],
-//    idx = 0;
 
 function testCollisions() {
     //todo the test for the collisions here
 }
 setInterval(function() {
-    var snakes = [];
+    var snakes = moveSnakes();
+    if(snakes.length !== 0) {
+        wsServer.clients.forEach(function (client) {
+            client.send(JSON.stringify(snakes));
+        });
+    }
+}, 1000 / 30);
 
-    if (wsServer.clients.length > 0) {
+function moveSnakes(){
+    var snakes = [];
+    if (clients.length > 0) {
         wsServer.clients.forEach(function (x) {
-            var curClient = clients[x.index];
+            var curClient = clients[x.id];
             if (curClient._snake.length > 0 ) {
-                if (curClient._click != null) {
-                    moveSnake(curClient._snake, curClient._click[0], curClient._click[1]);
+                if (curClient._click.length !== 0) {
+                    moveSnake(curClient, curClient._snake, curClient._click[0], curClient._click[1]);
                     testCollisions();
                 }
             }
             snakes.push(curClient._snake);
         });
-        x.send(JSON.stringify(snakes));
-        //
-        //
-        //if(snake[0][0] == xs[idx] && snake[0][1] == ys[idx]) {
-        //    idx++;
-        //}
-        //if (idx === 4) idx = 0;
     }
-}, 1000 / 30);
+    return snakes;
+}
 
-function moveSnake(snake, ix, iy) {
+function moveSnake(client, snake, ix, iy) {
     //console.log("moveSnake()");
 	var velX,
 		velY,
@@ -142,8 +151,12 @@ function moveSnake(snake, ix, iy) {
     snake[0][0] += velX;
     snake[0][1] += velY;
     for (i = snake.length - 1 ; i > 0 ; i --) {
-        snake[i][0] = snake[i-1][0];
-        snake[i][1] = snake[i-1][1];
+        snake[i][0] = snake[i - 1][0];
+        snake[i][1] = snake[i - 1][1];
+    }
+
+    if (Math.abs(snake[0][0] - ix) < 5 && Math.abs(snake [0][1] - iy) < 5) {
+        client._click = [];
     }
 }
 
@@ -151,28 +164,28 @@ function generateRandomSnake(number) {
     var serpent = [],
         xS,
         yS;
-    switch (number){
-        case number % 4 === 0: // 1st corner = UP - LEFT
-            xS = number * Math.random();
-            yS = number * Math.random();
+    switch (number % 4){
+        case 0: // 1st corner = UP - LEFT
+            xS = ( number + 30 ) * getRandomInt(1, 10);
+            yS = ( number + 30 ) * getRandomInt(1, 10);
             break;
-        case number % 3 === 0: // 2nd corner = UP - RIGHT
-            xS = 1325 - number * Math.random();
-            yS = number * Math.random();
+        case 1: // 2nd corner = UP - RIGHT
+            xS = CONSOLE_LENGTH - ( number + 30 ) * getRandomInt(1, 10);
+            yS = ( number + 30 ) * getRandomInt(1, 10);
             break;
-        case number % 2 === 0: // 3rd corner = DOWN - RIGHT
-            xS = 1325 - number * Math.random();
-            yS = 545 - number * Math.random();
+        case 2: // 3rd corner = DOWN - RIGHT
+            xS = CONSOLE_LENGTH - ( number + 30 ) * getRandomInt(1, 10);
+            yS = CONSOLE_HEIGHT - ( number + 30 ) * getRandomInt(1, 10);
             break;
-        case number % 1 === 0: // 4th corner = DOWN - LEFT
-            xS = number * Math.random();
-            yS = 545 - number * Math.random();
+        case 3: // 4th corner = DOWN - LEFT
+            xS = ( number + 30 ) * getRandomInt(1, 10);
+            yS = CONSOLE_HEIGHT - ( number + 30 ) * getRandomInt(1, 10);
             break;
     }
 
     for (i = 0; i < 50; i ++) {
         var si = [];
-        if( (xS + 30) > 1325 ) {
+        if( (xS + 30) < 1200 ) {
             xS += 5;
         } else {
             yS += 5;
@@ -184,3 +197,6 @@ function generateRandomSnake(number) {
     return serpent;
 }
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
