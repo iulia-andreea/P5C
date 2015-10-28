@@ -9,10 +9,8 @@ project.currentStyle = {
 var ws = new WebSocket('wss://localhost:8081'),
     clientID;
 
-
 var snake = [],
     rec_data = [],
-    snakeMap = [],
     i;
 
     //      --- WebSocket Functions ---
@@ -26,20 +24,25 @@ ws.onmessage = function (event) {
     //console.log(event.data);
     //addLog(event.data);
 
-    if(isInt(event.data)) {
+    if(isInt(parseInt(event.data))) {
         clientID = parseInt(event.data);
         addLog("ClientID = " + clientID);
     } else {
+        //addLog(event.data);
         rec_data =  JSON.parse(event.data);
     }
 };
 
 ws.onclose = function (event) {
-    //todo show close message
+    if (window.alert("Connection LOST!")) {
+        document.reload();
+    }
 };
 
 ws.onerror = function (event) {
-    //todo show error message
+    if( window.alert("ERROR occured!") ) {
+        document.reload();
+    }
 };
 
 function onMouseUp(event) {
@@ -49,45 +52,27 @@ function onMouseUp(event) {
     ws.send(JSON.stringify(point));
 }
 
-
 function onFrame(event) {
     project.clear();
-    var x,
-        y;
+
     if (rec_data.length === 0) return;
     rec_data.forEach(function (attr) { // iterare serpi
         for (i = 0; i < attr.length; i++) { // iterare segmente
-            x = attr[i][0];
-            y = attr[i][1];
             snake[i] = new Path.Circle({
-                center: [x, y],
+                center: [attr[i][0], attr[i][1]],
                 radius: 30
             });
             snake[i].fillColor = "turquoise";
         }
+
+        var head = new Path.Circle({
+            center: [attr[0][0], attr[0][1]],
+            radius: 30
+        });
+
+        head.fillColor = "#24cc";
     });
 }
-
-    //addLog("Head at : {" + snakeMap[0][0] + ", " + snakeMap[0][1] + "} ");
-
-//    if (targetX >= 0 && targetY >= 0) {
-//        snake[0].position.x += velX;
-//        snake[0].position.y += velY;
-//        //snakeEyes[0].position.x += velX;
-//        //snakeEyes[0].position.y += velY;
-//        //snakeEyes[1].position.x += velX;
-//        //snakeEyes[1].position.y += velY;
-//        for (i = snake.length - 1 ; i > 0 ; i -= 1) {
-//            snake[i].position.x = snake[i-1].position.x;
-//            snake[i].position.y = snake[i-1].position.y;
-//        }
-//        if (Math.abs(snake[0].position.x - targetX) <= Math.abs(velX) &&
-//            Math.abs(snake[0].position.y - targetY) <= Math.abs(velY)) {
-//            targetX = -1;
-//            targetY = -1;
-//        }
-//    }
-
 
 function addLog(text) {
     var obj = document.getElementById("log_area");

@@ -20,11 +20,12 @@ var express = require('express');
 
 var app = express();
 app.use(express.static('public'));
+app.use(express.static('resources'));
 
 //Defining the ports we want to listen to
 const PORT_S=8081;
 
-//Create a secured server
+//Create circle1 secured server
 var secure_server = https.createServer(options, app);
 
 var WebSocketServer = require('ws').Server
@@ -58,11 +59,13 @@ var client = require("./client");
 
 var clients = [],
     clientIndex = 0,
+    obstacles = [],
     snake = [],
     i;
 
 const CONSOLE_HEIGHT = 520,
-      CONSOLE_LENGTH = 1250;
+      CONSOLE_LENGTH = 1250,
+      RADIUS = 30;
 
 for (i = 0; i < 50; i ++) {
     var si = [];
@@ -73,7 +76,7 @@ for (i = 0; i < 50; i ++) {
 
 // WebSocket server
 wsServer.on("connection", function(ws) {
-    //console.log("connection:");
+    console.log("connection:");
 
 	//wsServer.clients.forEach(function(x) {
 	//	x.send("New client connected: id=" + wsServer.clients.indexOf(ws.client));
@@ -87,51 +90,141 @@ wsServer.on("connection", function(ws) {
                 newClient._snake = generateRandomSnake(id);
                 clients[id] = newClient;
                 ws.id = id;
-                ws.send(id);
-                console.log(newClient);
+                try {
+                    ws.send(JSON.stringify(id));
+                    //todo send obstacles
+                } catch (e) {
+                    console.error(e);
+                }
+                console.log("New client: " + newClient._id);
                 break;
             default :
                 var xey = [];
                 xey = JSON.parse(message);
-                clients[ws.id]._click = xey;
-                console.log(xey);
+                if (xey.length > 0) {
+                    clients[ws.id]._click = xey;
+                }
+                //console.log(xey);
         }
     });
     ws.on('error', function(message) {
+        console.log("error " + message);
         delete clients[ws.id];
     });
     ws.on('close', function(message) {
+        console.log("close :" + message);
         delete clients[ws.id];
     });
 });
+function testCollisionWithSelf(self) {
+    var result = false;
+    for ( i = 40 ; i < self._snake.length ; i++) {
+        var dx = Math.abs(self._snake[0][0] - self._snake[i][0]),
+            dy = Math.abs(self._snake[0][1] - self._snake[i][1]),
+            distance = Math.sqrt(dx * dx + dy * dy);
 
-function testCollisions() {
-    //todo the test for the collisions here
+        if (distance < RADIUS * 2) {
+            result = true;
+            console.log("SELF Collision!!!");
+        }
+    }
+    return result;
 }
+function testCollisionBetweenSnakes(movingClient, client) {
+    var result = false;
+    client._snake.forEach(function (circle) {
+        var dx = movingClient._snake[0][0] - circle[0];
+        var dy = movingClient._snake[0][1] - circle[1];
+        var distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < RADIUS * 2) {
+            result = true;
+            console.log("Collision!!!");
+        }
+    });
+    return result;
+}
+
+function testCollisionWithObstacle(circle1, obstacle) { //obstacle {x, y, width, height}
+    var cX = Math.abs(circle[0] - obstacle[0]),
+        cY = Math.abs(circle[1] - obstacle[1]);
+
+    if (cX > (obstacle[2] / 2 + RADIUS)) { return false; }
+    if (cY > (obstacle[3] / 2 + RADIUS)) { return false; }
+
+    if (cX <= (obstacle[2] / 2)) { return true; }
+    if (cY <= (obstacle[3] / 2)) { return true; }
+
+    var cornerDistance_sq = (cX - obstacle[2]/2)^2 +
+        (cY - obstacle[3] / 2) ^ 2;
+
+    return (cornerDistance_sq <= (RADIUS^2));
+}
+
+wsServer.broadcast = function broadcast(data) {
+    wsServer.clients.forEach(function each(client) {
+        /*
+            readyState:
+                0 - connection not yet established
+                1 - conncetion established
+                2 - in closing handshake
+                3 - connection closed or could not open
+
+         */
+        if (client.readyState === 1) {
+            try {
+                client.send(JSON.stringify(data));
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    });
+};
+
 setInterval(function() {
-    var snakes = moveSnakes();
-    if(snakes.length !== 0) {
-        wsServer.clients.forEach(function (client) {
-            client.send(JSON.stringify(snakes));
-        });
+    if (clients.length > 0) {
+        var snakes = moveSnakes();
+
+        if (snakes.length !== 0) {
+            wsServer.broadcast(snakes)
+        }
     }
 }, 1000 / 30);
 
 function moveSnakes(){
     var snakes = [];
     if (clients.length > 0) {
-        wsServer.clients.forEach(function (x) {
-            var curClient = clients[x.id];
-            if (curClient._snake.length > 0 ) {
+        clients.forEach(function(curClient) {
+            //console.log(curClient);
+            if (curClient != null && curClient._snake.length > 0) {
+
                 if (curClient._click.length !== 0) {
                     moveSnake(curClient, curClient._snake, curClient._click[0], curClient._click[1]);
-                    testCollisions();
+
+                    if (testCollisions(curClient)) {
+                        curClient._snake = generateRandomSnake(getRandomInt(clientIndex % 10, 10));
+                        curClient._click = [];
+                    }
                 }
+                snakes.push(curClient._snake);
             }
-            snakes.push(curClient._snake);
         });
     }
     return snakes;
+}
+
+function testCollisions(movingClient) {
+    var result = false;
+    clients.forEach(function (client) {
+        if (client._id === movingClient._id) {
+            if (testCollisionWithSelf(client)) {
+                result = true;
+            }
+        } else if (testCollisionBetweenSnakes(movingClient, client)) {
+            result = true;
+        }
+    });
+    return result;
 }
 
 function moveSnake(client, snake, ix, iy) {
@@ -161,31 +254,32 @@ function moveSnake(client, snake, ix, iy) {
 }
 
 function generateRandomSnake(number) {
+    //todo check collisions
     var serpent = [],
         xS,
         yS;
     switch (number % 4){
         case 0: // 1st corner = UP - LEFT
-            xS = ( number + 30 ) * getRandomInt(1, 10);
-            yS = ( number + 30 ) * getRandomInt(1, 10);
+            xS = (number + RADIUS) * getRandomInt(1, 10);
+            yS = (number + RADIUS) * getRandomInt(1, 10);
             break;
         case 1: // 2nd corner = UP - RIGHT
-            xS = CONSOLE_LENGTH - ( number + 30 ) * getRandomInt(1, 10);
-            yS = ( number + 30 ) * getRandomInt(1, 10);
+            xS = CONSOLE_LENGTH - (number + RADIUS) * getRandomInt(1, 10);
+            yS = (number + RADIUS) * getRandomInt(1, 10);
             break;
         case 2: // 3rd corner = DOWN - RIGHT
-            xS = CONSOLE_LENGTH - ( number + 30 ) * getRandomInt(1, 10);
-            yS = CONSOLE_HEIGHT - ( number + 30 ) * getRandomInt(1, 10);
+            xS = CONSOLE_LENGTH - (number + RADIUS) * getRandomInt(1, 10);
+            yS = CONSOLE_HEIGHT - (number + RADIUS) * getRandomInt(1, 10);
             break;
-        case 3: // 4th corner = DOWN - LEFT
-            xS = ( number + 30 ) * getRandomInt(1, 10);
-            yS = CONSOLE_HEIGHT - ( number + 30 ) * getRandomInt(1, 10);
+        default: // 4th corner = DOWN - LEFT
+            xS = (number + RADIUS) * getRandomInt(1, 10);
+            yS = CONSOLE_HEIGHT - (number + RADIUS) * getRandomInt(1, 10);
             break;
     }
 
     for (i = 0; i < 50; i ++) {
         var si = [];
-        if( (xS + 30) < 1200 ) {
+        if ((xS + RADIUS) < 1200) {
             xS += 5;
         } else {
             yS += 5;

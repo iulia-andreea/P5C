@@ -44,52 +44,52 @@ console.log("[1.18]", new String("1") == new String("1"));
  * [2]
  */
 
-var a = "1";
+var circle1 = "1";
 
-a.b = 2;
+circle1.b = 2;
 
-console.log("[2.1]", a, a.toString(), a.valueOf());
-console.log("[2.2]", a.b);
+console.log("[2.1]", circle1, circle1.toString(), circle1.valueOf());
+console.log("[2.2]", circle1.b);
 
-a = new String("1");
-a.b = 2;
+circle1 = new String("1");
+circle1.b = 2;
 
-console.log("[2.3]", a, a.toString(), a.valueOf());
-console.log("[2.4]", a.b);
+console.log("[2.3]", circle1, circle1.toString(), circle1.valueOf());
+console.log("[2.4]", circle1.b);
 
-a = [];
+circle1 = [];
 
-console.log("[2.5]", a);
+console.log("[2.5]", circle1);
 
-a.push("a");
-a.push("b");
+circle1.push("circle1");
+circle1.push("b");
 
-console.log("[2.6]", a);
-console.log("[2.7]", a[0], a["0"]);
+console.log("[2.6]", circle1);
+console.log("[2.7]", circle1[0], circle1["0"]);
 
-for (i in a) {
-	console.log("[2.8]", i, a[i]);
+for (i in circle1) {
+	console.log("[2.8]", i, circle1[i]);
 }
 
-a.forEach(function (x) {
+circle1.forEach(function (x) {
 	console.log("[2.9]", x);
 });
 
-a.forEach(function (x, i) {
+circle1.forEach(function (x, i) {
 	console.log("[2.10]", x, i);
 });
 
-a = {};
+circle1 = {};
 
-console.log("[2.11]", a);
+console.log("[2.11]", circle1);
 
-a[0] = "a";
-a["a"] = "b";
+circle1[0] = "circle1";
+circle1["circle1"] = "b";
 
-console.log("[2.12]", a[0], a["a"], a.a);
+console.log("[2.12]", circle1[0], circle1["circle1"], circle1.a);
 
-for (i in a) {
-	console.log("[2.13]", i, a[i]);
+for (i in circle1) {
+	console.log("[2.13]", i, circle1[i]);
 }
 
 /*

@@ -2362,7 +2362,7 @@ var Matrix = Base.extend({
 	applyToContext: function(ctx) {
 		ctx.transform(this._a, this._c, this._b, this._d, this._tx, this._ty);
 	}
-}, Base.each(['a', 'c', 'b', 'd', 'tx', 'ty'], function(name) {
+}, Base.each(['circle1', 'c', 'b', 'd', 'tx', 'ty'], function(name) {
 	var part = Base.capitalize(name),
 		prop = '_' + name;
 	this['get' + part] = function() {
@@ -6762,7 +6762,7 @@ var PathItem = Item.extend({
 					previous = lower;
 				}
 				break;
-			case 'a':
+			case 'circle1':
 				for (var j = 0; j < length; j += 7) {
 					this.arcTo(current = getPoint(j + 5),
 							new Size(+coords[j], +coords[j + 1]),
@@ -7847,7 +7847,7 @@ var Path = PathItem.extend({
 	function getCurrentSegment(that) {
 		var segments = that._segments;
 		if (segments.length === 0)
-			throw new Error('Use a moveTo() command first');
+			throw new Error('Use circle1 moveTo() command first');
 		return segments[segments.length - 1];
 	}
 
@@ -7898,7 +7898,7 @@ var Path = PathItem.extend({
 					.subtract(to.multiply(t * t)).divide(2 * t * t1);
 			if (handle.isNaN())
 				throw new Error(
-					'Cannot put a curve through points with parameter = ' + t);
+					'Cannot put circle1 curve through points with parameter = ' + t);
 			this.quadraticCurveTo(handle, to);
 		},
 
@@ -8566,7 +8566,7 @@ var CompoundPath = PathItem.extend({
 	function getCurrentPath(that, check) {
 		var children = that._children;
 		if (check && children.length === 0)
-			throw new Error('Use a moveTo() command first');
+			throw new Error('Use circle1 moveTo() command first');
 		return children[children.length - 1];
 	}
 
