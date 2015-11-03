@@ -11,13 +11,17 @@ var ws = new WebSocket('wss://localhost:8081'),
 
 var snake = [],
     rec_data = [],
-    i;
+    i,
+    RADIUS = 20,
+    isConnected = false;
 
     //      --- WebSocket Functions ---
 ws.onopen = function () {
     //console.log("Socket opened!");
     //addLog("Socket opened!");
-    ws.send("start");
+    isConnected = true;
+    var start_button = document.getElementById("start_btn");
+    start_button.addEventListener("click", startGame);
 };
 
 ws.onmessage = function (event) {
@@ -37,12 +41,14 @@ ws.onclose = function (event) {
     if (window.alert("Connection LOST!")) {
         document.reload();
     }
+    isConnected = false;
 };
 
 ws.onerror = function (event) {
     if( window.alert("ERROR occured!") ) {
         document.reload();
     }
+    isConnected = false;
 };
 
 function onMouseUp(event) {
@@ -54,23 +60,34 @@ function onMouseUp(event) {
 
 function onFrame(event) {
     project.clear();
+    var j = 0;
 
     if (rec_data.length === 0) return;
     rec_data.forEach(function (attr) { // iterare serpi
         for (i = 0; i < attr.length; i++) { // iterare segmente
             snake[i] = new Path.Circle({
                 center: [attr[i][0], attr[i][1]],
-                radius: 30
+                radius: RADIUS
             });
-            snake[i].fillColor = "turquoise";
+            snake[i].fillColor = "#4DFF4D";
         }
 
         var head = new Path.Circle({
             center: [attr[0][0], attr[0][1]],
-            radius: 30
+            radius: RADIUS
         });
+        head.fillColor = "#99FF99";
 
-        head.fillColor = "#24cc";
+
+        if (j === clientID) {
+            var clientIndicator = new Path.Circle({
+                center: [attr[0][0], attr[0][1]],
+                radius: 5
+            });
+            clientIndicator.fillColor = "#0000";
+        }
+
+        j++;
     });
 }
 
@@ -82,6 +99,16 @@ function addLog(text) {
 
 function isInt(string) {
     return !isNaN(parseInt(string)) && isFinite(string);
+}
+
+function startGame(){
+    var username = document.getElementById("user");
+    if (username.value.length > 0) {
+        ws.send("start");
+
+        username.disabled = true;
+        document.getElementById("start_btn").style.display = "none";
+    }
 }
 
 //function onMouseDrag(event) {

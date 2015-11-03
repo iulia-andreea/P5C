@@ -65,7 +65,7 @@ var clients = [],
 
 const CONSOLE_HEIGHT = 520,
       CONSOLE_LENGTH = 1250,
-      RADIUS = 30;
+      RADIUS = 20;
 
 for (i = 0; i < 50; i ++) {
     var si = [];
@@ -101,7 +101,7 @@ wsServer.on("connection", function(ws) {
             default :
                 var xey = [];
                 xey = JSON.parse(message);
-                if (xey.length > 0) {
+                if (xey !== null && xey.length > 0) {
                     clients[ws.id]._click = xey;
                 }
                 //console.log(xey);
