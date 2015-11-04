@@ -1,7 +1,7 @@
 
     //      ***  VARIABLES UTILS  ***
 //Importing the HTTP module
-var http = require('http');
+//var http = require('http');
 
 //Importing the HTTPS module
 var https = require('https');
@@ -23,7 +23,7 @@ app.use(express.static('public'));
 app.use(express.static('resources'));
 
 //Defining the ports we want to listen to
-const PORT_S=8081;
+const PORT_S = 8081;
 
 //Create circle1 secured server
 var secure_server = https.createServer(options, app);
@@ -54,25 +54,18 @@ app.post("/post1", function(req, res) {
     res.end('Got Post Data');
 });
 
-    //   *** VARIABLES PROPRES **
 var client = require("./client");
 
+    //   *** VARIABLES PROPRES **
 var clients = [],
     clientIndex = 0,
     obstacles = [],
-    snake = [],
     i;
 
-const CONSOLE_HEIGHT = 520,
-      CONSOLE_LENGTH = 1250,
-      RADIUS = 20;
-
-for (i = 0; i < 50; i ++) {
-    var si = [];
-    si.push(200 + i * 5);
-    si.push(200);
-    snake.push(si);
-}
+const CANVAS_HEIGHT = 520,
+      CANVAS_LENGTH = 1000,
+      RADIUS = 20,
+      SNAKE_LENGTH = 50;
 
 // WebSocket server
 wsServer.on("connection", function(ws) {
@@ -83,28 +76,36 @@ wsServer.on("connection", function(ws) {
 	//});
 
     ws.on('message', function(message) {
-        switch (message) {
-            case "start":
-                var id = clientIndex++;
-                var newClient = new client(id);
-                newClient._snake = generateRandomSnake(id);
-                clients[id] = newClient;
-                ws.id = id;
-                try {
-                    ws.send(JSON.stringify(id));
-                    //todo send obstacles
-                } catch (e) {
-                    console.error(e);
+        if (message.indexOf("start") > -1 && message.split(",", 2)[1].length > 0) {
+            var id = clientIndex++,
+                genNO = 0,
+                clientName = message.split(",", 2)[1],
+                newClient = new client(id, clientName);
+            newClient._snake = generateRandomSnake(id);
+            if (testCollisions(newClient._snake)) {
+                genNO++;
+                if (genNO < 100) {
+                    newClient._snake = generateRandomSnake(id);
+                } else {
+                    console.log("There is no more space for another client on the game board!");
                 }
-                console.log("New client: " + newClient._id);
-                break;
-            default :
-                var xey = [];
-                xey = JSON.parse(message);
-                if (xey !== null && xey.length > 0) {
-                    clients[ws.id]._click = xey;
-                }
-                //console.log(xey);
+            }
+            clients[id] = newClient;
+            ws.id = id;
+            try {
+                ws.send(JSON.stringify(id));
+                //todo send obstacles
+            } catch (e) {
+                console.error(e);
+            }
+            console.log("New client: id=" + newClient._id + ", name=" + newClient._name);
+        } else {
+            var xey = [];
+            xey = JSON.parse(message);
+            if (xey !== null && xey.length > 0) {
+                clients[ws.id]._click = xey;
+            }
+            //console.log(xey);
         }
     });
     ws.on('error', function(message) {
@@ -116,6 +117,7 @@ wsServer.on("connection", function(ws) {
         delete clients[ws.id];
     });
 });
+
 function testCollisionWithSelf(self) {
     var result = false;
     for ( i = 40 ; i < self._snake.length ; i++) {
@@ -123,29 +125,34 @@ function testCollisionWithSelf(self) {
             dy = Math.abs(self._snake[0][1] - self._snake[i][1]),
             distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < RADIUS * 2) {
+        if (distance - RADIUS * 2 < -1) {
             result = true;
             console.log("SELF Collision!!!");
         }
     }
     return result;
 }
+
 function testCollisionBetweenSnakes(movingClient, client) {
     var result = false;
-    client._snake.forEach(function (circle) {
-        var dx = movingClient._snake[0][0] - circle[0];
-        var dy = movingClient._snake[0][1] - circle[1];
-        var distance = Math.sqrt(dx * dx + dy * dy);
+    if (client._snake != null && movingClient._snake != null) {
+        client._snake.forEach(function (circle) {
+            movingClient._snake.forEach(function (mCircle) {
+                var dx = mCircle[0] - circle[0];
+                var dy = mCircle[1] - circle[1];
+                var distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < RADIUS * 2) {
-            result = true;
-            console.log("Collision!!!");
-        }
-    });
+                if (distance < RADIUS * 2) {
+                    result = true;
+                    console.log("Collision!!!");
+                }
+            });
+        });
+    }
     return result;
 }
 
-function testCollisionWithObstacle(circle1, obstacle) { //obstacle {x, y, width, height}
+function testCollisionWithObstacle(circle, obstacle) { //obstacle {x, y, width, height}
     var cX = Math.abs(circle[0] - obstacle[0]),
         cY = Math.abs(circle[1] - obstacle[1]);
 
@@ -264,22 +271,22 @@ function generateRandomSnake(number) {
             yS = (number + RADIUS) * getRandomInt(1, 10);
             break;
         case 1: // 2nd corner = UP - RIGHT
-            xS = CONSOLE_LENGTH - (number + RADIUS) * getRandomInt(1, 10);
+            xS = CANVAS_LENGTH - (number + RADIUS) * getRandomInt(1, 10);
             yS = (number + RADIUS) * getRandomInt(1, 10);
             break;
         case 2: // 3rd corner = DOWN - RIGHT
-            xS = CONSOLE_LENGTH - (number + RADIUS) * getRandomInt(1, 10);
-            yS = CONSOLE_HEIGHT - (number + RADIUS) * getRandomInt(1, 10);
+            xS = CANVAS_LENGTH - (number + RADIUS) * getRandomInt(1, 10);
+            yS = CANVAS_HEIGHT - (number + RADIUS) * getRandomInt(1, 10);
             break;
         default: // 4th corner = DOWN - LEFT
             xS = (number + RADIUS) * getRandomInt(1, 10);
-            yS = CONSOLE_HEIGHT - (number + RADIUS) * getRandomInt(1, 10);
+            yS = CANVAS_HEIGHT - (number + RADIUS) * getRandomInt(1, 10);
             break;
     }
 
-    for (i = 0; i < 50; i ++) {
+    for (i = 0 ; i < SNAKE_LENGTH ; i ++) {
         var si = [];
-        if ((xS + RADIUS) < 1200) {
+        if ((xS + RADIUS) < 1000) {
             xS += 5;
         } else {
             yS += 5;

@@ -6,14 +6,18 @@ project.currentStyle = {
     fillColor: 'turquoise'
 };
 
+document.getElementById("canvas").style.width=window.innerWidth * 70 / 100;
+
 var ws = new WebSocket('wss://localhost:8081'),
-    clientID;
+    clientID = -1;
 
 var snake = [],
     rec_data = [],
     i,
     RADIUS = 20,
-    isConnected = false;
+    isConnected = false,
+    CANVAS_HEIGHT = 545,
+    CANVAS_LENGTH = 1000;
 
     //      --- WebSocket Functions ---
 ws.onopen = function () {
@@ -52,10 +56,20 @@ ws.onerror = function (event) {
 };
 
 function onMouseUp(event) {
-    var point = [];
-    point.push(event.point.x);
-    point.push(event.point.y);
-    ws.send(JSON.stringify(point));
+    var x = event.point.x,
+        y = event.point.y;
+
+    if (x - RADIUS < 0) x = RADIUS;
+    if (y - RADIUS < 0) y = RADIUS;
+    if (x + RADIUS > CANVAS_LENGTH) x = CANVAS_LENGTH - RADIUS;
+    if (y + RADIUS > CANVAS_HEIGHT) y = CANVAS_HEIGHT - RADIUS;
+
+    if (clientID != -1) {
+        var point = [];
+        point.push(x);
+        point.push(y);
+        ws.send(JSON.stringify(point));
+    }
 }
 
 function onFrame(event) {
@@ -104,7 +118,7 @@ function isInt(string) {
 function startGame(){
     var username = document.getElementById("user");
     if (username.value.length > 0) {
-        ws.send("start");
+        ws.send("start," + username.value);
 
         username.disabled = true;
         document.getElementById("start_btn").style.display = "none";
