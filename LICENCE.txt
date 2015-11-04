@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='GitLab Enterprise Edition' name='description'>
+<meta content='origin-when-cross-origin' name='referrer'>
+<title>LICENCE.txt | master | George-Alexandru Toma / NodeJS | GitLab</title>
+<link href="/assets/favicon-5738a6efe01f3282080df5f467da72a9.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link href="/assets/application-d05fc94d7dd324cb7aad09d4286310ca.css" media="all" rel="stylesheet" />
+<link href="/assets/print-47fe51cdf70398e5e54b544e0f5cc718.css" media="print" rel="stylesheet" />
+<script src="/assets/application-478a3b9da05266815225b23b6f203fb7.js"></script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="bJ0KpOtJw5f4Y9HXlzNx+12EsQx1l6Jiph4BUyi10bY=" name="csrf-token" />
+<script type="text/javascript">
+//<![CDATA[
+window.gon={};gon.api_version="v3";gon.default_avatar_url="https://gitlab.com/assets/no_avatar-0b64d25ac5f63e6f0caee99e819105ba.png";gon.default_issues_tracker="gitlab";gon.max_file_size=10;gon.relative_url_root="";gon.user_color_scheme="white";
+//]]>
+</script>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='#474D57' name='theme-color'>
+<link href="/assets/touch-icon-iphone-4c0496ac9f88e7961644c66b289a6614.png" rel="apple-touch-icon" type="image/vnd.microsoft.icon" />
+<link href="/assets/touch-icon-ipad-d64abe7a8e8be6e02245d2ed79da6ff9.png" rel="apple-touch-icon" sizes="76x76" type="image/vnd.microsoft.icon" />
+<link href="/assets/touch-icon-iphone-retina-54af16810ab006406b4df81f8a92fe8d.png" rel="apple-touch-icon" sizes="120x120" type="image/vnd.microsoft.icon" />
+<link href="/assets/touch-icon-ipad-retina-72774a950890a9e3811ab91f186cc11f.png" rel="apple-touch-icon" sizes="152x152" type="image/vnd.microsoft.icon" />
+<meta content='/assets/msapplication-tile-0cf7066c37c04d40809fdcc2bf53a754.png' name='msapplication-TileImage'>
+<meta content='#30353E' name='msapplication-TileColor'>
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37019925-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+<style>
+  [data-user-is] {
+    display: none !important;
+  }
+  
+  [data-user-is=""] {
+    display: block !important;
+  }
+  
+  [data-user-is=""][data-display="inline"] {
+    display: inline !important;
+  }
+  
+  [data-user-is-not] {
+    display: block !important;
+  }
+  
+  [data-user-is-not][data-display="inline"] {
+    display: inline !important;
+  }
+  
+  [data-user-is-not=""] {
+    display: none !important;
+  }
+</style>
+
+</head>
+
+<body class='ui_charcoal' data-page='projects:blob:show'>
+
+<header class='header-expanded navbar navbar-fixed-top navbar-gitlab'>
+<div class='container-fluid'>
+<div class='header-content'>
+<div class='pull-right'>
+<a class="btn btn-sign-in btn-success" href="/users/sign_in?redirect_to_referer=yes">Sign in</a>
+</div>
+<h1 class='title'><span><a href="/u/alextsl">George-Alexandru Toma</a> / <a href="/alextsl/NodeJS">NodeJS</a> &middot; <a href="/alextsl/NodeJS/tree/master">Files</a></span></h1>
+</div>
+</div>
+</header>
+
+
+<div class='page-sidebar-expanded page-with-sidebar'>
+
+<div class='sidebar-wrapper nicescroll'>
+<div class='header-logo'>
+<a class="home" data-placement="bottom" data-toggle="tooltip" href="/" id="js-shortcuts-home" title="Dashboard"><svg width="36px" height="36px" viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="tanuki-logo">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo" sketch:type="MSLayerGroup" transform="translate(0.000000, 10.000000)">
+            <g id="Page-1" sketch:type="MSShapeGroup">
+                <g id="Fill-1-+-Group-24">
+                    <g id="Group-24">
+                        <g id="Group">
+                            <path d="M105.0614,193.655 L105.0614,193.655 L143.7014,74.734 L66.4214,74.734 L105.0614,193.655 L105.0614,193.655 Z" id="Fill-4" fill="#E24329" class="tanuki-shape"></path>
+                            <path d="M105.0614,193.6548 L66.4214,74.7338 L12.2684,74.7338 L105.0614,193.6548 L105.0614,193.6548 Z" id="Fill-8" fill="#FC6D26" class="tanuki-shape"></path>
+                            <path d="M12.2685,74.7341 L12.2685,74.7341 L0.5265,110.8731 C-0.5445,114.1691 0.6285,117.7801 3.4325,119.8171 L105.0615,193.6551 L12.2685,74.7341 L12.2685,74.7341 Z" id="Fill-12" fill="#FCA326" class="tanuki-shape"></path>
+                            <path d="M12.2685,74.7342 L66.4215,74.7342 L43.1485,3.1092 C41.9515,-0.5768 36.7375,-0.5758 35.5405,3.1092 L12.2685,74.7342 L12.2685,74.7342 Z" id="Fill-16" fill="#E24329" class="tanuki-shape"></path>
+                            <path d="M105.0614,193.6548 L143.7014,74.7338 L197.8544,74.7338 L105.0614,193.6548 L105.0614,193.6548 Z" id="Fill-18" fill="#FC6D26" class="tanuki-shape"></path>
+                            <path d="M197.8544,74.7341 L197.8544,74.7341 L209.5964,110.8731 C210.6674,114.1691 209.4944,117.7801 206.6904,119.8171 L105.0614,193.6551 L197.8544,74.7341 L197.8544,74.7341 Z" id="Fill-20" fill="#FCA326" class="tanuki-shape"></path>
+                            <path d="M197.8544,74.7342 L143.7014,74.7342 L166.9744,3.1092 C168.1714,-0.5768 173.3854,-0.5758 174.5824,3.1092 L197.8544,74.7342 L197.8544,74.7342 Z" id="Fill-22" fill="#E24329" class="tanuki-shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+
+<div class='gitlab-text-container'>
+<h3>GitLab</h3>
+</div>
+</a></div>
+<ul class='nav nav-sidebar'>
+<li class=""><a class="back-link" data-placement="right" href="/" title="Back to dashboard"><i class="fa fa-caret-square-o-left fa-fw"></i>
+<span>
+Back to dashboard
+</span>
+</a></li><li class='separate-item'></li>
+<li class="home"><a class="shortcuts-project" data-placement="right" href="/alextsl/NodeJS" title="Project"><i class="fa fa-home fa-fw"></i>
+<span>
+Project
+</span>
+</a></li><li class=""><a class="shortcuts-project-activity" data-placement="right" href="/alextsl/NodeJS/activity" title="Project Activity"><i class="fa fa-dashboard fa-fw"></i>
+<span>
+Activity
+</span>
+</a></li><li class="active"><a class="shortcuts-tree" data-placement="right" href="/alextsl/NodeJS/tree/master" title="Files"><i class="fa fa-files-o fa-fw"></i>
+<span>
+Files
+</span>
+</a></li><li class=""><a class="shortcuts-commits" data-placement="right" href="/alextsl/NodeJS/commits/master" title="Commits"><i class="fa fa-history fa-fw"></i>
+<span>
+Commits
+</span>
+</a></li><li class=""><a class="shortcuts-network" data-placement="right" href="/alextsl/NodeJS/network/master" title="Network"><i class="fa fa-code-fork fa-fw"></i>
+<span>
+Network
+</span>
+</a></li><li class=""><a class="shortcuts-graphs" data-placement="right" href="/alextsl/NodeJS/graphs/master" title="Graphs"><i class="fa fa-area-chart fa-fw"></i>
+<span>
+Graphs
+</span>
+</a></li><li class=""><a data-placement="right" href="/alextsl/NodeJS/milestones" title="Milestones"><i class="fa fa-clock-o fa-fw"></i>
+<span>
+Milestones
+</span>
+</a></li><li class=""><a class="shortcuts-issues" data-placement="right" href="/alextsl/NodeJS/issues" title="Issues"><i class="fa fa-exclamation-circle fa-fw"></i>
+<span>
+Issues
+<span class='count issue_counter'>0</span>
+</span>
+</a></li><li class=""><a class="shortcuts-merge_requests" data-placement="right" href="/alextsl/NodeJS/merge_requests" title="Merge Requests"><i class="fa fa-tasks fa-fw"></i>
+<span>
+Merge Requests
+<span class='count merge_counter'>0</span>
+</span>
+</a></li><li class=""><a data-placement="right" href="/alextsl/NodeJS/labels" title="Labels"><i class="fa fa-tags fa-fw"></i>
+<span>
+Labels
+</span>
+</a></li><li class=""><a class="shortcuts-wiki" data-placement="right" href="/alextsl/NodeJS/wikis/home" title="Wiki"><i class="fa fa-book fa-fw"></i>
+<span>
+Wiki
+</span>
+</a></li></ul>
+
+<div class='collapse-nav'>
+<a class="toggle-nav-collapse" href="#" title="Open/Close"><i class="fa fa-angle-left"></i></a>
+
+</div>
+</div>
+<div class='content-wrapper'>
+<div class='flash-container'>
+</div>
+
+
+<div class='container-fluid container-limited'>
+<div class='content'>
+<div class='clearfix'>
+
+
+<div class='tree-ref-holder'>
+<form accept-charset="UTF-8" action="/alextsl/NodeJS/refs/switch" class="project-refs-form" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<select class="project-refs-select select2 select2-sm" id="ref" name="ref"><optgroup label="Branches"><option selected="selected" value="master">master</option></optgroup><optgroup label="Tags"></optgroup></select>
+<input id="destination" name="destination" type="hidden" value="blob" />
+<input id="path" name="path" type="hidden" value="LICENCE.txt" />
+</form>
+
+
+</div>
+<div class='tree-holder' id='tree-holder'>
+<ul class='breadcrumb repo-breadcrumb'>
+<li>
+<i class='fa fa-angle-right'></i>
+<a href="/alextsl/NodeJS/tree/master">NodeJS
+</a></li>
+<li>
+<a href="/alextsl/NodeJS/blob/master/LICENCE.txt"><strong>
+LICENCE.txt
+</strong>
+</a></li>
+</ul>
+<ul class='blob-commit-info hidden-xs'>
+<li class='commit js-toggle-container'>
+<div class='commit-row-title'>
+<strong class='str-truncated'>
+<a class="commit-row-message" href="/alextsl/NodeJS/commit/f0d544969bd60bb2b33cd9b891732154b166f840">Updated readme, added licence</a>
+</strong>
+<div class='pull-right'>
+<a class="commit_short_id" href="/alextsl/NodeJS/commit/f0d544969bd60bb2b33cd9b891732154b166f840">f0d54496</a>
+</div>
+<div class='notes_count'>
+</div>
+</div>
+<div class='commit-row-info'>
+<a class="commit-author-link has_tooltip" data-original-title="alex.toma15@gmail.com" href="mailto:alex.toma15@gmail.com"><img alt="" class="avatar s24" src="https://secure.gravatar.com/avatar/3174d9f3762bb3f0b0fd679079b111eb?s=24&amp;d=identicon" width="24" /> <span class="commit-author-name">George-Alexandru Toma</span></a>
+authored
+<div class='committed_ago'>
+<time class="time_ago js-timeago" data-container="body" data-placement="top" data-toggle="tooltip" datetime="2015-11-04T06:47:42Z" title="Nov 04, 2015 6:47am">2015-11-04 07:47:42 +0100</time> &nbsp;
+</div>
+<a class="pull-right" href="/alextsl/NodeJS/tree/f0d544969bd60bb2b33cd9b891732154b166f840">Browse Code »</a>
+</div>
+</li>
+
+</ul>
+<div class='blob-content-holder' id='blob-content-holder'>
+<article class='file-holder'>
+<div class='file-title'>
+<i class="fa fa-file-text-o fa-fw"></i>
+<strong>
+LICENCE.txt
+</strong>
+<small>
+14.9 KB
+</small>
+<div class='file-actions hidden-xs'>
+<div class='btn-group tree-btn-group'>
+<span class="btn btn-small disabled">Edit</span>
+<a class="btn btn-sm" href="/alextsl/NodeJS/raw/master/LICENCE.txt" target="_blank">Raw</a>
+<a class="btn btn-sm" href="/alextsl/NodeJS/blame/master/LICENCE.txt">Blame</a>
+<a class="btn btn-sm" href="/alextsl/NodeJS/commits/master/LICENCE.txt">History</a>
+<a class="btn btn-sm" href="/alextsl/NodeJS/blob/f0d544969bd60bb2b33cd9b891732154b166f840/LICENCE.txt">Permalink</a>
+</div>
+
+</div>
+</div>
+<div class='file-content code'>
+<div class='code file-content js-syntax-highlight white'>
+<div class='line-numbers'>
+<a data-line-number='1' href='#L1' id='L1'>
+<i class='fa fa-link'></i>
+1
+</a>
+<a data-line-number='2' href='#L2' id='L2'>
+<i class='fa fa-link'></i>
+2
+</a>
+<a data-line-number='3' href='#L3' id='L3'>
+<i class='fa fa-link'></i>
+3
+</a>
+<a data-line-number='4' href='#L4' id='L4'>
+<i class='fa fa-link'></i>
+4
+</a>
+<a data-line-number='5' href='#L5' id='L5'>
+<i class='fa fa-link'></i>
+5
+</a>
+<a data-line-number='6' href='#L6' id='L6'>
+<i class='fa fa-link'></i>
+6
+</a>
+<a data-line-number='7' href='#L7' id='L7'>
+<i class='fa fa-link'></i>
+7
+</a>
+<a data-line-number='8' href='#L8' id='L8'>
+<i class='fa fa-link'></i>
+8
+</a>
+<a data-line-number='9' href='#L9' id='L9'>
+<i class='fa fa-link'></i>
+9
+</a>
+<a data-line-number='10' href='#L10' id='L10'>
+<i class='fa fa-link'></i>
+10
+</a>
+<a data-line-number='11' href='#L11' id='L11'>
+<i class='fa fa-link'></i>
+11
+</a>
+<a data-line-number='12' href='#L12' id='L12'>
+<i class='fa fa-link'></i>
+12
+</a>
+<a data-line-number='13' href='#L13' id='L13'>
+<i class='fa fa-link'></i>
+13
+</a>
+<a data-line-number='14' href='#L14' id='L14'>
+<i class='fa fa-link'></i>
+14
+</a>
+<a data-line-number='15' href='#L15' id='L15'>
+<i class='fa fa-link'></i>
+15
+</a>
+<a data-line-number='16' href='#L16' id='L16'>
+<i class='fa fa-link'></i>
+16
+</a>
+<a data-line-number='17' href='#L17' id='L17'>
+<i class='fa fa-link'></i>
+17
+</a>
+<a data-line-number='18' href='#L18' id='L18'>
+<i class='fa fa-link'></i>
+18
+</a>
+<a data-line-number='19' href='#L19' id='L19'>
+<i class='fa fa-link'></i>
+19
+</a>
+<a data-line-number='20' href='#L20' id='L20'>
+<i class='fa fa-link'></i>
+20
+</a>
+<a data-line-number='21' href='#L21' id='L21'>
+<i class='fa fa-link'></i>
+21
+</a>
+<a data-line-number='22' href='#L22' id='L22'>
+<i class='fa fa-link'></i>
+22
+</a>
+<a data-line-number='23' href='#L23' id='L23'>
+<i class='fa fa-link'></i>
+23
+</a>
+<a data-line-number='24' href='#L24' id='L24'>
+<i class='fa fa-link'></i>
+24
+</a>
+<a data-line-number='25' href='#L25' id='L25'>
+<i class='fa fa-link'></i>
+25
+</a>
+<a data-line-number='26' href='#L26' id='L26'>
+<i class='fa fa-link'></i>
+26
+</a>
+<a data-line-number='27' href='#L27' id='L27'>
+<i class='fa fa-link'></i>
+27
+</a>
+<a data-line-number='28' href='#L28' id='L28'>
+<i class='fa fa-link'></i>
+28
+</a>
+<a data-line-number='29' href='#L29' id='L29'>
+<i class='fa fa-link'></i>
+29
+</a>
+<a data-line-number='30' href='#L30' id='L30'>
+<i class='fa fa-link'></i>
+30
+</a>
+<a data-line-number='31' href='#L31' id='L31'>
+<i class='fa fa-link'></i>
+31
+</a>
+<a data-line-number='32' href='#L32' id='L32'>
+<i class='fa fa-link'></i>
+32
+</a>
+<a data-line-number='33' href='#L33' id='L33'>
+<i class='fa fa-link'></i>
+33
+</a>
+<a data-line-number='34' href='#L34' id='L34'>
+<i class='fa fa-link'></i>
+34
+</a>
+<a data-line-number='35' href='#L35' id='L35'>
+<i class='fa fa-link'></i>
+35
+</a>
+<a data-line-number='36' href='#L36' id='L36'>
+<i class='fa fa-link'></i>
+36
+</a>
+<a data-line-number='37' href='#L37' id='L37'>
+<i class='fa fa-link'></i>
+37
+</a>
+<a data-line-number='38' href='#L38' id='L38'>
+<i class='fa fa-link'></i>
+38
+</a>
+<a data-line-number='39' href='#L39' id='L39'>
+<i class='fa fa-link'></i>
+39
+</a>
+<a data-line-number='40' href='#L40' id='L40'>
+<i class='fa fa-link'></i>
+40
+</a>
+<a data-line-number='41' href='#L41' id='L41'>
+<i class='fa fa-link'></i>
+41
+</a>
+<a data-line-number='42' href='#L42' id='L42'>
+<i class='fa fa-link'></i>
+42
+</a>
+<a data-line-number='43' href='#L43' id='L43'>
+<i class='fa fa-link'></i>
+43
+</a>
+<a data-line-number='44' href='#L44' id='L44'>
+<i class='fa fa-link'></i>
+44
+</a>
+<a data-line-number='45' href='#L45' id='L45'>
+<i class='fa fa-link'></i>
+45
+</a>
+<a data-line-number='46' href='#L46' id='L46'>
+<i class='fa fa-link'></i>
+46
+</a>
+<a data-line-number='47' href='#L47' id='L47'>
+<i class='fa fa-link'></i>
+47
+</a>
+<a data-line-number='48' href='#L48' id='L48'>
+<i class='fa fa-link'></i>
+48
+</a>
+<a data-line-number='49' href='#L49' id='L49'>
+<i class='fa fa-link'></i>
+49
+</a>
+<a data-line-number='50' href='#L50' id='L50'>
+<i class='fa fa-link'></i>
+50
+</a>
+<a data-line-number='51' href='#L51' id='L51'>
+<i class='fa fa-link'></i>
+51
+</a>
+<a data-line-number='52' href='#L52' id='L52'>
+<i class='fa fa-link'></i>
+52
+</a>
+<a data-line-number='53' href='#L53' id='L53'>
+<i class='fa fa-link'></i>
+53
+</a>
+<a data-line-number='54' href='#L54' id='L54'>
+<i class='fa fa-link'></i>
+54
+</a>
+<a data-line-number='55' href='#L55' id='L55'>
+<i class='fa fa-link'></i>
+55
+</a>
+<a data-line-number='56' href='#L56' id='L56'>
+<i class='fa fa-link'></i>
+56
+</a>
+<a data-line-number='57' href='#L57' id='L57'>
+<i class='fa fa-link'></i>
+57
+</a>
+<a data-line-number='58' href='#L58' id='L58'>
+<i class='fa fa-link'></i>
+58
+</a>
+<a data-line-number='59' href='#L59' id='L59'>
+<i class='fa fa-link'></i>
+59
+</a>
+<a data-line-number='60' href='#L60' id='L60'>
+<i class='fa fa-link'></i>
+60
+</a>
+<a data-line-number='61' href='#L61' id='L61'>
+<i class='fa fa-link'></i>
+61
+</a>
+<a data-line-number='62' href='#L62' id='L62'>
+<i class='fa fa-link'></i>
+62
+</a>
+<a data-line-number='63' href='#L63' id='L63'>
+<i class='fa fa-link'></i>
+63
+</a>
+<a data-line-number='64' href='#L64' id='L64'>
+<i class='fa fa-link'></i>
+64
+</a>
+<a data-line-number='65' href='#L65' id='L65'>
+<i class='fa fa-link'></i>
+65
+</a>
+<a data-line-number='66' href='#L66' id='L66'>
+<i class='fa fa-link'></i>
+66
+</a>
+<a data-line-number='67' href='#L67' id='L67'>
+<i class='fa fa-link'></i>
+67
+</a>
+<a data-line-number='68' href='#L68' id='L68'>
+<i class='fa fa-link'></i>
+68
+</a>
+<a data-line-number='69' href='#L69' id='L69'>
+<i class='fa fa-link'></i>
+69
+</a>
+<a data-line-number='70' href='#L70' id='L70'>
+<i class='fa fa-link'></i>
+70
+</a>
+<a data-line-number='71' href='#L71' id='L71'>
+<i class='fa fa-link'></i>
+71
+</a>
+<a data-line-number='72' href='#L72' id='L72'>
+<i class='fa fa-link'></i>
+72
+</a>
+<a data-line-number='73' href='#L73' id='L73'>
+<i class='fa fa-link'></i>
+73
+</a>
+<a data-line-number='74' href='#L74' id='L74'>
+<i class='fa fa-link'></i>
+74
+</a>
+<a data-line-number='75' href='#L75' id='L75'>
+<i class='fa fa-link'></i>
+75
+</a>
+<a data-line-number='76' href='#L76' id='L76'>
+<i class='fa fa-link'></i>
+76
+</a>
+<a data-line-number='77' href='#L77' id='L77'>
+<i class='fa fa-link'></i>
+77
+</a>
+<a data-line-number='78' href='#L78' id='L78'>
+<i class='fa fa-link'></i>
+78
+</a>
+<a data-line-number='79' href='#L79' id='L79'>
+<i class='fa fa-link'></i>
+79
+</a>
+<a data-line-number='80' href='#L80' id='L80'>
+<i class='fa fa-link'></i>
+80
+</a>
+<a data-line-number='81' href='#L81' id='L81'>
+<i class='fa fa-link'></i>
+81
+</a>
+<a data-line-number='82' href='#L82' id='L82'>
+<i class='fa fa-link'></i>
+82
+</a>
+<a data-line-number='83' href='#L83' id='L83'>
+<i class='fa fa-link'></i>
+83
+</a>
+<a data-line-number='84' href='#L84' id='L84'>
+<i class='fa fa-link'></i>
+84
+</a>
+<a data-line-number='85' href='#L85' id='L85'>
+<i class='fa fa-link'></i>
+85
+</a>
+<a data-line-number='86' href='#L86' id='L86'>
+<i class='fa fa-link'></i>
+86
+</a>
+<a data-line-number='87' href='#L87' id='L87'>
+<i class='fa fa-link'></i>
+87
+</a>
+<a data-line-number='88' href='#L88' id='L88'>
+<i class='fa fa-link'></i>
+88
+</a>
+<a data-line-number='89' href='#L89' id='L89'>
+<i class='fa fa-link'></i>
+89
+</a>
+<a data-line-number='90' href='#L90' id='L90'>
+<i class='fa fa-link'></i>
+90
+</a>
+<a data-line-number='91' href='#L91' id='L91'>
+<i class='fa fa-link'></i>
+91
+</a>
+<a data-line-number='92' href='#L92' id='L92'>
+<i class='fa fa-link'></i>
+92
+</a>
+<a data-line-number='93' href='#L93' id='L93'>
+<i class='fa fa-link'></i>
+93
+</a>
+<a data-line-number='94' href='#L94' id='L94'>
+<i class='fa fa-link'></i>
+94
+</a>
+<a data-line-number='95' href='#L95' id='L95'>
+<i class='fa fa-link'></i>
+95
+</a>
+<a data-line-number='96' href='#L96' id='L96'>
+<i class='fa fa-link'></i>
+96
+</a>
+<a data-line-number='97' href='#L97' id='L97'>
+<i class='fa fa-link'></i>
+97
+</a>
+<a data-line-number='98' href='#L98' id='L98'>
+<i class='fa fa-link'></i>
+98
+</a>
+<a data-line-number='99' href='#L99' id='L99'>
+<i class='fa fa-link'></i>
+99
+</a>
+<a data-line-number='100' href='#L100' id='L100'>
+<i class='fa fa-link'></i>
+100
+</a>
+<a data-line-number='101' href='#L101' id='L101'>
+<i class='fa fa-link'></i>
+101
+</a>
+<a data-line-number='102' href='#L102' id='L102'>
+<i class='fa fa-link'></i>
+102
+</a>
+<a data-line-number='103' href='#L103' id='L103'>
+<i class='fa fa-link'></i>
+103
+</a>
+<a data-line-number='104' href='#L104' id='L104'>
+<i class='fa fa-link'></i>
+104
+</a>
+<a data-line-number='105' href='#L105' id='L105'>
+<i class='fa fa-link'></i>
+105
+</a>
+<a data-line-number='106' href='#L106' id='L106'>
+<i class='fa fa-link'></i>
+106
+</a>
+<a data-line-number='107' href='#L107' id='L107'>
+<i class='fa fa-link'></i>
+107
+</a>
+<a data-line-number='108' href='#L108' id='L108'>
+<i class='fa fa-link'></i>
+108
+</a>
+<a data-line-number='109' href='#L109' id='L109'>
+<i class='fa fa-link'></i>
+109
+</a>
+<a data-line-number='110' href='#L110' id='L110'>
+<i class='fa fa-link'></i>
+110
+</a>
+<a data-line-number='111' href='#L111' id='L111'>
+<i class='fa fa-link'></i>
+111
+</a>
+<a data-line-number='112' href='#L112' id='L112'>
+<i class='fa fa-link'></i>
+112
+</a>
+<a data-line-number='113' href='#L113' id='L113'>
+<i class='fa fa-link'></i>
+113
+</a>
+<a data-line-number='114' href='#L114' id='L114'>
+<i class='fa fa-link'></i>
+114
+</a>
+<a data-line-number='115' href='#L115' id='L115'>
+<i class='fa fa-link'></i>
+115
+</a>
+<a data-line-number='116' href='#L116' id='L116'>
+<i class='fa fa-link'></i>
+116
+</a>
+<a data-line-number='117' href='#L117' id='L117'>
+<i class='fa fa-link'></i>
+117
+</a>
+<a data-line-number='118' href='#L118' id='L118'>
+<i class='fa fa-link'></i>
+118
+</a>
+<a data-line-number='119' href='#L119' id='L119'>
+<i class='fa fa-link'></i>
+119
+</a>
+<a data-line-number='120' href='#L120' id='L120'>
+<i class='fa fa-link'></i>
+120
+</a>
+<a data-line-number='121' href='#L121' id='L121'>
+<i class='fa fa-link'></i>
+121
+</a>
+<a data-line-number='122' href='#L122' id='L122'>
+<i class='fa fa-link'></i>
+122
+</a>
+<a data-line-number='123' href='#L123' id='L123'>
+<i class='fa fa-link'></i>
+123
+</a>
+<a data-line-number='124' href='#L124' id='L124'>
+<i class='fa fa-link'></i>
+124
+</a>
+<a data-line-number='125' href='#L125' id='L125'>
+<i class='fa fa-link'></i>
+125
+</a>
+<a data-line-number='126' href='#L126' id='L126'>
+<i class='fa fa-link'></i>
+126
+</a>
+<a data-line-number='127' href='#L127' id='L127'>
+<i class='fa fa-link'></i>
+127
+</a>
+<a data-line-number='128' href='#L128' id='L128'>
+<i class='fa fa-link'></i>
+128
+</a>
+<a data-line-number='129' href='#L129' id='L129'>
+<i class='fa fa-link'></i>
+129
+</a>
+<a data-line-number='130' href='#L130' id='L130'>
+<i class='fa fa-link'></i>
+130
+</a>
+<a data-line-number='131' href='#L131' id='L131'>
+<i class='fa fa-link'></i>
+131
+</a>
+<a data-line-number='132' href='#L132' id='L132'>
+<i class='fa fa-link'></i>
+132
+</a>
+<a data-line-number='133' href='#L133' id='L133'>
+<i class='fa fa-link'></i>
+133
+</a>
+<a data-line-number='134' href='#L134' id='L134'>
+<i class='fa fa-link'></i>
+134
+</a>
+<a data-line-number='135' href='#L135' id='L135'>
+<i class='fa fa-link'></i>
+135
+</a>
+<a data-line-number='136' href='#L136' id='L136'>
+<i class='fa fa-link'></i>
+136
+</a>
+<a data-line-number='137' href='#L137' id='L137'>
+<i class='fa fa-link'></i>
+137
+</a>
+<a data-line-number='138' href='#L138' id='L138'>
+<i class='fa fa-link'></i>
+138
+</a>
+<a data-line-number='139' href='#L139' id='L139'>
+<i class='fa fa-link'></i>
+139
+</a>
+<a data-line-number='140' href='#L140' id='L140'>
+<i class='fa fa-link'></i>
+140
+</a>
+<a data-line-number='141' href='#L141' id='L141'>
+<i class='fa fa-link'></i>
+141
+</a>
+<a data-line-number='142' href='#L142' id='L142'>
+<i class='fa fa-link'></i>
+142
+</a>
+<a data-line-number='143' href='#L143' id='L143'>
+<i class='fa fa-link'></i>
+143
+</a>
+<a data-line-number='144' href='#L144' id='L144'>
+<i class='fa fa-link'></i>
+144
+</a>
+<a data-line-number='145' href='#L145' id='L145'>
+<i class='fa fa-link'></i>
+145
+</a>
+<a data-line-number='146' href='#L146' id='L146'>
+<i class='fa fa-link'></i>
+146
+</a>
+<a data-line-number='147' href='#L147' id='L147'>
+<i class='fa fa-link'></i>
+147
+</a>
+<a data-line-number='148' href='#L148' id='L148'>
+<i class='fa fa-link'></i>
+148
+</a>
+<a data-line-number='149' href='#L149' id='L149'>
+<i class='fa fa-link'></i>
+149
+</a>
+<a data-line-number='150' href='#L150' id='L150'>
+<i class='fa fa-link'></i>
+150
+</a>
+<a data-line-number='151' href='#L151' id='L151'>
+<i class='fa fa-link'></i>
+151
+</a>
+<a data-line-number='152' href='#L152' id='L152'>
+<i class='fa fa-link'></i>
+152
+</a>
+<a data-line-number='153' href='#L153' id='L153'>
+<i class='fa fa-link'></i>
+153
+</a>
+<a data-line-number='154' href='#L154' id='L154'>
+<i class='fa fa-link'></i>
+154
+</a>
+<a data-line-number='155' href='#L155' id='L155'>
+<i class='fa fa-link'></i>
+155
+</a>
+<a data-line-number='156' href='#L156' id='L156'>
+<i class='fa fa-link'></i>
+156
+</a>
+<a data-line-number='157' href='#L157' id='L157'>
+<i class='fa fa-link'></i>
+157
+</a>
+<a data-line-number='158' href='#L158' id='L158'>
+<i class='fa fa-link'></i>
+158
+</a>
+<a data-line-number='159' href='#L159' id='L159'>
+<i class='fa fa-link'></i>
+159
+</a>
+<a data-line-number='160' href='#L160' id='L160'>
+<i class='fa fa-link'></i>
+160
+</a>
+<a data-line-number='161' href='#L161' id='L161'>
+<i class='fa fa-link'></i>
+161
+</a>
+<a data-line-number='162' href='#L162' id='L162'>
+<i class='fa fa-link'></i>
+162
+</a>
+<a data-line-number='163' href='#L163' id='L163'>
+<i class='fa fa-link'></i>
+163
+</a>
+<a data-line-number='164' href='#L164' id='L164'>
+<i class='fa fa-link'></i>
+164
+</a>
+<a data-line-number='165' href='#L165' id='L165'>
+<i class='fa fa-link'></i>
+165
+</a>
+<a data-line-number='166' href='#L166' id='L166'>
+<i class='fa fa-link'></i>
+166
+</a>
+<a data-line-number='167' href='#L167' id='L167'>
+<i class='fa fa-link'></i>
+167
+</a>
+<a data-line-number='168' href='#L168' id='L168'>
+<i class='fa fa-link'></i>
+168
+</a>
+<a data-line-number='169' href='#L169' id='L169'>
+<i class='fa fa-link'></i>
+169
+</a>
+<a data-line-number='170' href='#L170' id='L170'>
+<i class='fa fa-link'></i>
+170
+</a>
+<a data-line-number='171' href='#L171' id='L171'>
+<i class='fa fa-link'></i>
+171
+</a>
+<a data-line-number='172' href='#L172' id='L172'>
+<i class='fa fa-link'></i>
+172
+</a>
+<a data-line-number='173' href='#L173' id='L173'>
+<i class='fa fa-link'></i>
+173
+</a>
+<a data-line-number='174' href='#L174' id='L174'>
+<i class='fa fa-link'></i>
+174
+</a>
+<a data-line-number='175' href='#L175' id='L175'>
+<i class='fa fa-link'></i>
+175
+</a>
+<a data-line-number='176' href='#L176' id='L176'>
+<i class='fa fa-link'></i>
+176
+</a>
+<a data-line-number='177' href='#L177' id='L177'>
+<i class='fa fa-link'></i>
+177
+</a>
+<a data-line-number='178' href='#L178' id='L178'>
+<i class='fa fa-link'></i>
+178
+</a>
+<a data-line-number='179' href='#L179' id='L179'>
+<i class='fa fa-link'></i>
+179
+</a>
+<a data-line-number='180' href='#L180' id='L180'>
+<i class='fa fa-link'></i>
+180
+</a>
+<a data-line-number='181' href='#L181' id='L181'>
+<i class='fa fa-link'></i>
+181
+</a>
+<a data-line-number='182' href='#L182' id='L182'>
+<i class='fa fa-link'></i>
+182
+</a>
+<a data-line-number='183' href='#L183' id='L183'>
+<i class='fa fa-link'></i>
+183
+</a>
+<a data-line-number='184' href='#L184' id='L184'>
+<i class='fa fa-link'></i>
+184
+</a>
+<a data-line-number='185' href='#L185' id='L185'>
+<i class='fa fa-link'></i>
+185
+</a>
+<a data-line-number='186' href='#L186' id='L186'>
+<i class='fa fa-link'></i>
+186
+</a>
+<a data-line-number='187' href='#L187' id='L187'>
+<i class='fa fa-link'></i>
+187
+</a>
+<a data-line-number='188' href='#L188' id='L188'>
+<i class='fa fa-link'></i>
+188
+</a>
+<a data-line-number='189' href='#L189' id='L189'>
+<i class='fa fa-link'></i>
+189
+</a>
+<a data-line-number='190' href='#L190' id='L190'>
+<i class='fa fa-link'></i>
+190
+</a>
+<a data-line-number='191' href='#L191' id='L191'>
+<i class='fa fa-link'></i>
+191
+</a>
+<a data-line-number='192' href='#L192' id='L192'>
+<i class='fa fa-link'></i>
+192
+</a>
+<a data-line-number='193' href='#L193' id='L193'>
+<i class='fa fa-link'></i>
+193
+</a>
+<a data-line-number='194' href='#L194' id='L194'>
+<i class='fa fa-link'></i>
+194
+</a>
+<a data-line-number='195' href='#L195' id='L195'>
+<i class='fa fa-link'></i>
+195
+</a>
+<a data-line-number='196' href='#L196' id='L196'>
+<i class='fa fa-link'></i>
+196
+</a>
+<a data-line-number='197' href='#L197' id='L197'>
+<i class='fa fa-link'></i>
+197
+</a>
+<a data-line-number='198' href='#L198' id='L198'>
+<i class='fa fa-link'></i>
+198
+</a>
+<a data-line-number='199' href='#L199' id='L199'>
+<i class='fa fa-link'></i>
+199
+</a>
+<a data-line-number='200' href='#L200' id='L200'>
+<i class='fa fa-link'></i>
+200
+</a>
+<a data-line-number='201' href='#L201' id='L201'>
+<i class='fa fa-link'></i>
+201
+</a>
+<a data-line-number='202' href='#L202' id='L202'>
+<i class='fa fa-link'></i>
+202
+</a>
+<a data-line-number='203' href='#L203' id='L203'>
+<i class='fa fa-link'></i>
+203
+</a>
+<a data-line-number='204' href='#L204' id='L204'>
+<i class='fa fa-link'></i>
+204
+</a>
+<a data-line-number='205' href='#L205' id='L205'>
+<i class='fa fa-link'></i>
+205
+</a>
+<a data-line-number='206' href='#L206' id='L206'>
+<i class='fa fa-link'></i>
+206
+</a>
+<a data-line-number='207' href='#L207' id='L207'>
+<i class='fa fa-link'></i>
+207
+</a>
+<a data-line-number='208' href='#L208' id='L208'>
+<i class='fa fa-link'></i>
+208
+</a>
+<a data-line-number='209' href='#L209' id='L209'>
+<i class='fa fa-link'></i>
+209
+</a>
+<a data-line-number='210' href='#L210' id='L210'>
+<i class='fa fa-link'></i>
+210
+</a>
+<a data-line-number='211' href='#L211' id='L211'>
+<i class='fa fa-link'></i>
+211
+</a>
+<a data-line-number='212' href='#L212' id='L212'>
+<i class='fa fa-link'></i>
+212
+</a>
+<a data-line-number='213' href='#L213' id='L213'>
+<i class='fa fa-link'></i>
+213
+</a>
+<a data-line-number='214' href='#L214' id='L214'>
+<i class='fa fa-link'></i>
+214
+</a>
+<a data-line-number='215' href='#L215' id='L215'>
+<i class='fa fa-link'></i>
+215
+</a>
+<a data-line-number='216' href='#L216' id='L216'>
+<i class='fa fa-link'></i>
+216
+</a>
+<a data-line-number='217' href='#L217' id='L217'>
+<i class='fa fa-link'></i>
+217
+</a>
+<a data-line-number='218' href='#L218' id='L218'>
+<i class='fa fa-link'></i>
+218
+</a>
+<a data-line-number='219' href='#L219' id='L219'>
+<i class='fa fa-link'></i>
+219
+</a>
+<a data-line-number='220' href='#L220' id='L220'>
+<i class='fa fa-link'></i>
+220
+</a>
+<a data-line-number='221' href='#L221' id='L221'>
+<i class='fa fa-link'></i>
+221
+</a>
+<a data-line-number='222' href='#L222' id='L222'>
+<i class='fa fa-link'></i>
+222
+</a>
+<a data-line-number='223' href='#L223' id='L223'>
+<i class='fa fa-link'></i>
+223
+</a>
+<a data-line-number='224' href='#L224' id='L224'>
+<i class='fa fa-link'></i>
+224
+</a>
+<a data-line-number='225' href='#L225' id='L225'>
+<i class='fa fa-link'></i>
+225
+</a>
+<a data-line-number='226' href='#L226' id='L226'>
+<i class='fa fa-link'></i>
+226
+</a>
+<a data-line-number='227' href='#L227' id='L227'>
+<i class='fa fa-link'></i>
+227
+</a>
+<a data-line-number='228' href='#L228' id='L228'>
+<i class='fa fa-link'></i>
+228
+</a>
+<a data-line-number='229' href='#L229' id='L229'>
+<i class='fa fa-link'></i>
+229
+</a>
+<a data-line-number='230' href='#L230' id='L230'>
+<i class='fa fa-link'></i>
+230
+</a>
+<a data-line-number='231' href='#L231' id='L231'>
+<i class='fa fa-link'></i>
+231
+</a>
+<a data-line-number='232' href='#L232' id='L232'>
+<i class='fa fa-link'></i>
+232
+</a>
+<a data-line-number='233' href='#L233' id='L233'>
+<i class='fa fa-link'></i>
+233
+</a>
+<a data-line-number='234' href='#L234' id='L234'>
+<i class='fa fa-link'></i>
+234
+</a>
+<a data-line-number='235' href='#L235' id='L235'>
+<i class='fa fa-link'></i>
+235
+</a>
+<a data-line-number='236' href='#L236' id='L236'>
+<i class='fa fa-link'></i>
+236
+</a>
+<a data-line-number='237' href='#L237' id='L237'>
+<i class='fa fa-link'></i>
+237
+</a>
+<a data-line-number='238' href='#L238' id='L238'>
+<i class='fa fa-link'></i>
+238
+</a>
+<a data-line-number='239' href='#L239' id='L239'>
+<i class='fa fa-link'></i>
+239
+</a>
+<a data-line-number='240' href='#L240' id='L240'>
+<i class='fa fa-link'></i>
+240
+</a>
+<a data-line-number='241' href='#L241' id='L241'>
+<i class='fa fa-link'></i>
+241
+</a>
+<a data-line-number='242' href='#L242' id='L242'>
+<i class='fa fa-link'></i>
+242
+</a>
+<a data-line-number='243' href='#L243' id='L243'>
+<i class='fa fa-link'></i>
+243
+</a>
+<a data-line-number='244' href='#L244' id='L244'>
+<i class='fa fa-link'></i>
+244
+</a>
+<a data-line-number='245' href='#L245' id='L245'>
+<i class='fa fa-link'></i>
+245
+</a>
+<a data-line-number='246' href='#L246' id='L246'>
+<i class='fa fa-link'></i>
+246
+</a>
+<a data-line-number='247' href='#L247' id='L247'>
+<i class='fa fa-link'></i>
+247
+</a>
+<a data-line-number='248' href='#L248' id='L248'>
+<i class='fa fa-link'></i>
+248
+</a>
+<a data-line-number='249' href='#L249' id='L249'>
+<i class='fa fa-link'></i>
+249
+</a>
+<a data-line-number='250' href='#L250' id='L250'>
+<i class='fa fa-link'></i>
+250
+</a>
+<a data-line-number='251' href='#L251' id='L251'>
+<i class='fa fa-link'></i>
+251
+</a>
+<a data-line-number='252' href='#L252' id='L252'>
+<i class='fa fa-link'></i>
+252
+</a>
+<a data-line-number='253' href='#L253' id='L253'>
+<i class='fa fa-link'></i>
+253
+</a>
+<a data-line-number='254' href='#L254' id='L254'>
+<i class='fa fa-link'></i>
+254
+</a>
+<a data-line-number='255' href='#L255' id='L255'>
+<i class='fa fa-link'></i>
+255
+</a>
+<a data-line-number='256' href='#L256' id='L256'>
+<i class='fa fa-link'></i>
+256
+</a>
+<a data-line-number='257' href='#L257' id='L257'>
+<i class='fa fa-link'></i>
+257
+</a>
+<a data-line-number='258' href='#L258' id='L258'>
+<i class='fa fa-link'></i>
+258
+</a>
+<a data-line-number='259' href='#L259' id='L259'>
+<i class='fa fa-link'></i>
+259
+</a>
+<a data-line-number='260' href='#L260' id='L260'>
+<i class='fa fa-link'></i>
+260
+</a>
+<a data-line-number='261' href='#L261' id='L261'>
+<i class='fa fa-link'></i>
+261
+</a>
+<a data-line-number='262' href='#L262' id='L262'>
+<i class='fa fa-link'></i>
+262
+</a>
+<a data-line-number='263' href='#L263' id='L263'>
+<i class='fa fa-link'></i>
+263
+</a>
+<a data-line-number='264' href='#L264' id='L264'>
+<i class='fa fa-link'></i>
+264
+</a>
+<a data-line-number='265' href='#L265' id='L265'>
+<i class='fa fa-link'></i>
+265
+</a>
+<a data-line-number='266' href='#L266' id='L266'>
+<i class='fa fa-link'></i>
+266
+</a>
+<a data-line-number='267' href='#L267' id='L267'>
+<i class='fa fa-link'></i>
+267
+</a>
+<a data-line-number='268' href='#L268' id='L268'>
+<i class='fa fa-link'></i>
+268
+</a>
+<a data-line-number='269' href='#L269' id='L269'>
+<i class='fa fa-link'></i>
+269
+</a>
+<a data-line-number='270' href='#L270' id='L270'>
+<i class='fa fa-link'></i>
+270
+</a>
+<a data-line-number='271' href='#L271' id='L271'>
+<i class='fa fa-link'></i>
+271
+</a>
+<a data-line-number='272' href='#L272' id='L272'>
+<i class='fa fa-link'></i>
+272
+</a>
+<a data-line-number='273' href='#L273' id='L273'>
+<i class='fa fa-link'></i>
+273
+</a>
+<a data-line-number='274' href='#L274' id='L274'>
+<i class='fa fa-link'></i>
+274
+</a>
+<a data-line-number='275' href='#L275' id='L275'>
+<i class='fa fa-link'></i>
+275
+</a>
+<a data-line-number='276' href='#L276' id='L276'>
+<i class='fa fa-link'></i>
+276
+</a>
+<a data-line-number='277' href='#L277' id='L277'>
+<i class='fa fa-link'></i>
+277
+</a>
+<a data-line-number='278' href='#L278' id='L278'>
+<i class='fa fa-link'></i>
+278
+</a>
+<a data-line-number='279' href='#L279' id='L279'>
+<i class='fa fa-link'></i>
+279
+</a>
+<a data-line-number='280' href='#L280' id='L280'>
+<i class='fa fa-link'></i>
+280
+</a>
+</div>
+<pre class="code highlight"><code><span id="LC1" class="line">GNU GENERAL PUBLIC LICENSE</span>&#x000A;<span id="LC2" class="line">                       Version 2, June 1991</span>&#x000A;<span id="LC3" class="line"></span>&#x000A;<span id="LC4" class="line"> Copyright (C) 1989, 1991 Free Software Foundation, Inc., &lt;http://fsf.org/&gt;</span>&#x000A;<span id="LC5" class="line"> 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span>&#x000A;<span id="LC6" class="line"> Everyone is permitted to copy and distribute verbatim copies</span>&#x000A;<span id="LC7" class="line"> of this license document, but changing it is not allowed.</span>&#x000A;<span id="LC8" class="line"></span>&#x000A;<span id="LC9" class="line">                            Preamble</span>&#x000A;<span id="LC10" class="line"></span>&#x000A;<span id="LC11" class="line">  The licenses for most software are designed to take away your</span>&#x000A;<span id="LC12" class="line">freedom to share and change it.  By contrast, the GNU General Public</span>&#x000A;<span id="LC13" class="line">License is intended to guarantee your freedom to share and change free</span>&#x000A;<span id="LC14" class="line">software--to make sure the software is free for all its users.  This</span>&#x000A;<span id="LC15" class="line">General Public License applies to most of the Free Software</span>&#x000A;<span id="LC16" class="line">Foundation&#39;s software and to any other program whose authors commit to</span>&#x000A;<span id="LC17" class="line">using it.  (Some other Free Software Foundation software is covered by</span>&#x000A;<span id="LC18" class="line">the GNU Lesser General Public License instead.)  You can apply it to</span>&#x000A;<span id="LC19" class="line">your programs, too.</span>&#x000A;<span id="LC20" class="line"></span>&#x000A;<span id="LC21" class="line">  When we speak of free software, we are referring to freedom, not</span>&#x000A;<span id="LC22" class="line">price.  Our General Public Licenses are designed to make sure that you</span>&#x000A;<span id="LC23" class="line">have the freedom to distribute copies of free software (and charge for</span>&#x000A;<span id="LC24" class="line">this service if you wish), that you receive source code or can get it</span>&#x000A;<span id="LC25" class="line">if you want it, that you can change the software or use pieces of it</span>&#x000A;<span id="LC26" class="line">in new free programs; and that you know you can do these things.</span>&#x000A;<span id="LC27" class="line"></span>&#x000A;<span id="LC28" class="line">  To protect your rights, we need to make restrictions that forbid</span>&#x000A;<span id="LC29" class="line">anyone to deny you these rights or to ask you to surrender the rights.</span>&#x000A;<span id="LC30" class="line">These restrictions translate to certain responsibilities for you if you</span>&#x000A;<span id="LC31" class="line">distribute copies of the software, or if you modify it.</span>&#x000A;<span id="LC32" class="line"></span>&#x000A;<span id="LC33" class="line">  For example, if you distribute copies of such a program, whether</span>&#x000A;<span id="LC34" class="line">gratis or for a fee, you must give the recipients all the rights that</span>&#x000A;<span id="LC35" class="line">you have.  You must make sure that they, too, receive or can get the</span>&#x000A;<span id="LC36" class="line">source code.  And you must show them these terms so they know their</span>&#x000A;<span id="LC37" class="line">rights.</span>&#x000A;<span id="LC38" class="line"></span>&#x000A;<span id="LC39" class="line">  We protect your rights with two steps: (1) copyright the software, and</span>&#x000A;<span id="LC40" class="line">(2) offer you this license which gives you legal permission to copy,</span>&#x000A;<span id="LC41" class="line">distribute and/or modify the software.</span>&#x000A;<span id="LC42" class="line"></span>&#x000A;<span id="LC43" class="line">  Also, for each author&#39;s protection and ours, we want to make certain</span>&#x000A;<span id="LC44" class="line">that everyone understands that there is no warranty for this free</span>&#x000A;<span id="LC45" class="line">software.  If the software is modified by someone else and passed on, we</span>&#x000A;<span id="LC46" class="line">want its recipients to know that what they have is not the original, so</span>&#x000A;<span id="LC47" class="line">that any problems introduced by others will not reflect on the original</span>&#x000A;<span id="LC48" class="line">authors&#39; reputations.</span>&#x000A;<span id="LC49" class="line"></span>&#x000A;<span id="LC50" class="line">  Finally, any free program is threatened constantly by software</span>&#x000A;<span id="LC51" class="line">patents.  We wish to avoid the danger that redistributors of a free</span>&#x000A;<span id="LC52" class="line">program will individually obtain patent licenses, in effect making the</span>&#x000A;<span id="LC53" class="line">program proprietary.  To prevent this, we have made it clear that any</span>&#x000A;<span id="LC54" class="line">patent must be licensed for everyone&#39;s free use or not licensed at all.</span>&#x000A;<span id="LC55" class="line"></span>&#x000A;<span id="LC56" class="line">  The precise terms and conditions for copying, distribution and</span>&#x000A;<span id="LC57" class="line">modification follow.</span>&#x000A;<span id="LC58" class="line"></span>&#x000A;<span id="LC59" class="line">                    GNU GENERAL PUBLIC LICENSE</span>&#x000A;<span id="LC60" class="line">   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION</span>&#x000A;<span id="LC61" class="line"></span>&#x000A;<span id="LC62" class="line">  0. This License applies to any program or other work which contains</span>&#x000A;<span id="LC63" class="line">a notice placed by the copyright holder saying it may be distributed</span>&#x000A;<span id="LC64" class="line">under the terms of this General Public License.  The &quot;Program&quot;, below,</span>&#x000A;<span id="LC65" class="line">refers to any such program or work, and a &quot;work based on the Program&quot;</span>&#x000A;<span id="LC66" class="line">means either the Program or any derivative work under copyright law:</span>&#x000A;<span id="LC67" class="line">that is to say, a work containing the Program or a portion of it,</span>&#x000A;<span id="LC68" class="line">either verbatim or with modifications and/or translated into another</span>&#x000A;<span id="LC69" class="line">language.  (Hereinafter, translation is included without limitation in</span>&#x000A;<span id="LC70" class="line">the term &quot;modification&quot;.)  Each licensee is addressed as &quot;you&quot;.</span>&#x000A;<span id="LC71" class="line"></span>&#x000A;<span id="LC72" class="line">Activities other than copying, distribution and modification are not</span>&#x000A;<span id="LC73" class="line">covered by this License; they are outside its scope.  The act of</span>&#x000A;<span id="LC74" class="line">running the Program is not restricted, and the output from the Program</span>&#x000A;<span id="LC75" class="line">is covered only if its contents constitute a work based on the</span>&#x000A;<span id="LC76" class="line">Program (independent of having been made by running the Program).</span>&#x000A;<span id="LC77" class="line">Whether that is true depends on what the Program does.</span>&#x000A;<span id="LC78" class="line"></span>&#x000A;<span id="LC79" class="line">  1. You may copy and distribute verbatim copies of the Program&#39;s</span>&#x000A;<span id="LC80" class="line">source code as you receive it, in any medium, provided that you</span>&#x000A;<span id="LC81" class="line">conspicuously and appropriately publish on each copy an appropriate</span>&#x000A;<span id="LC82" class="line">copyright notice and disclaimer of warranty; keep intact all the</span>&#x000A;<span id="LC83" class="line">notices that refer to this License and to the absence of any warranty;</span>&#x000A;<span id="LC84" class="line">and give any other recipients of the Program a copy of this License</span>&#x000A;<span id="LC85" class="line">along with the Program.</span>&#x000A;<span id="LC86" class="line"></span>&#x000A;<span id="LC87" class="line">You may charge a fee for the physical act of transferring a copy, and</span>&#x000A;<span id="LC88" class="line">you may at your option offer warranty protection in exchange for a fee.</span>&#x000A;<span id="LC89" class="line"></span>&#x000A;<span id="LC90" class="line">  2. You may modify your copy or copies of the Program or any portion</span>&#x000A;<span id="LC91" class="line">of it, thus forming a work based on the Program, and copy and</span>&#x000A;<span id="LC92" class="line">distribute such modifications or work under the terms of Section 1</span>&#x000A;<span id="LC93" class="line">above, provided that you also meet all of these conditions:</span>&#x000A;<span id="LC94" class="line"></span>&#x000A;<span id="LC95" class="line">    a) You must cause the modified files to carry prominent notices</span>&#x000A;<span id="LC96" class="line">    stating that you changed the files and the date of any change.</span>&#x000A;<span id="LC97" class="line"></span>&#x000A;<span id="LC98" class="line">    b) You must cause any work that you distribute or publish, that in</span>&#x000A;<span id="LC99" class="line">    whole or in part contains or is derived from the Program or any</span>&#x000A;<span id="LC100" class="line">    part thereof, to be licensed as a whole at no charge to all third</span>&#x000A;<span id="LC101" class="line">    parties under the terms of this License.</span>&#x000A;<span id="LC102" class="line"></span>&#x000A;<span id="LC103" class="line">    c) If the modified program normally reads commands interactively</span>&#x000A;<span id="LC104" class="line">    when run, you must cause it, when started running for such</span>&#x000A;<span id="LC105" class="line">    interactive use in the most ordinary way, to print or display an</span>&#x000A;<span id="LC106" class="line">    announcement including an appropriate copyright notice and a</span>&#x000A;<span id="LC107" class="line">    notice that there is no warranty (or else, saying that you provide</span>&#x000A;<span id="LC108" class="line">    a warranty) and that users may redistribute the program under</span>&#x000A;<span id="LC109" class="line">    these conditions, and telling the user how to view a copy of this</span>&#x000A;<span id="LC110" class="line">    License.  (Exception: if the Program itself is interactive but</span>&#x000A;<span id="LC111" class="line">    does not normally print such an announcement, your work based on</span>&#x000A;<span id="LC112" class="line">    the Program is not required to print an announcement.)</span>&#x000A;<span id="LC113" class="line"></span>&#x000A;<span id="LC114" class="line">These requirements apply to the modified work as a whole.  If</span>&#x000A;<span id="LC115" class="line">identifiable sections of that work are not derived from the Program,</span>&#x000A;<span id="LC116" class="line">and can be reasonably considered independent and separate works in</span>&#x000A;<span id="LC117" class="line">themselves, then this License, and its terms, do not apply to those</span>&#x000A;<span id="LC118" class="line">sections when you distribute them as separate works.  But when you</span>&#x000A;<span id="LC119" class="line">distribute the same sections as part of a whole which is a work based</span>&#x000A;<span id="LC120" class="line">on the Program, the distribution of the whole must be on the terms of</span>&#x000A;<span id="LC121" class="line">this License, whose permissions for other licensees extend to the</span>&#x000A;<span id="LC122" class="line">entire whole, and thus to each and every part regardless of who wrote it.</span>&#x000A;<span id="LC123" class="line"></span>&#x000A;<span id="LC124" class="line">Thus, it is not the intent of this section to claim rights or contest</span>&#x000A;<span id="LC125" class="line">your rights to work written entirely by you; rather, the intent is to</span>&#x000A;<span id="LC126" class="line">exercise the right to control the distribution of derivative or</span>&#x000A;<span id="LC127" class="line">collective works based on the Program.</span>&#x000A;<span id="LC128" class="line"></span>&#x000A;<span id="LC129" class="line">In addition, mere aggregation of another work not based on the Program</span>&#x000A;<span id="LC130" class="line">with the Program (or with a work based on the Program) on a volume of</span>&#x000A;<span id="LC131" class="line">a storage or distribution medium does not bring the other work under</span>&#x000A;<span id="LC132" class="line">the scope of this License.</span>&#x000A;<span id="LC133" class="line"></span>&#x000A;<span id="LC134" class="line">  3. You may copy and distribute the Program (or a work based on it,</span>&#x000A;<span id="LC135" class="line">under Section 2) in object code or executable form under the terms of</span>&#x000A;<span id="LC136" class="line">Sections 1 and 2 above provided that you also do one of the following:</span>&#x000A;<span id="LC137" class="line"></span>&#x000A;<span id="LC138" class="line">    a) Accompany it with the complete corresponding machine-readable</span>&#x000A;<span id="LC139" class="line">    source code, which must be distributed under the terms of Sections</span>&#x000A;<span id="LC140" class="line">    1 and 2 above on a medium customarily used for software interchange; or,</span>&#x000A;<span id="LC141" class="line"></span>&#x000A;<span id="LC142" class="line">    b) Accompany it with a written offer, valid for at least three</span>&#x000A;<span id="LC143" class="line">    years, to give any third party, for a charge no more than your</span>&#x000A;<span id="LC144" class="line">    cost of physically performing source distribution, a complete</span>&#x000A;<span id="LC145" class="line">    machine-readable copy of the corresponding source code, to be</span>&#x000A;<span id="LC146" class="line">    distributed under the terms of Sections 1 and 2 above on a medium</span>&#x000A;<span id="LC147" class="line">    customarily used for software interchange; or,</span>&#x000A;<span id="LC148" class="line"></span>&#x000A;<span id="LC149" class="line">    c) Accompany it with the information you received as to the offer</span>&#x000A;<span id="LC150" class="line">    to distribute corresponding source code.  (This alternative is</span>&#x000A;<span id="LC151" class="line">    allowed only for noncommercial distribution and only if you</span>&#x000A;<span id="LC152" class="line">    received the program in object code or executable form with such</span>&#x000A;<span id="LC153" class="line">    an offer, in accord with Subsection b above.)</span>&#x000A;<span id="LC154" class="line"></span>&#x000A;<span id="LC155" class="line">The source code for a work means the preferred form of the work for</span>&#x000A;<span id="LC156" class="line">making modifications to it.  For an executable work, complete source</span>&#x000A;<span id="LC157" class="line">code means all the source code for all modules it contains, plus any</span>&#x000A;<span id="LC158" class="line">associated interface definition files, plus the scripts used to</span>&#x000A;<span id="LC159" class="line">control compilation and installation of the executable.  However, as a</span>&#x000A;<span id="LC160" class="line">special exception, the source code distributed need not include</span>&#x000A;<span id="LC161" class="line">anything that is normally distributed (in either source or binary</span>&#x000A;<span id="LC162" class="line">form) with the major components (compiler, kernel, and so on) of the</span>&#x000A;<span id="LC163" class="line">operating system on which the executable runs, unless that component</span>&#x000A;<span id="LC164" class="line">itself accompanies the executable.</span>&#x000A;<span id="LC165" class="line"></span>&#x000A;<span id="LC166" class="line">If distribution of executable or object code is made by offering</span>&#x000A;<span id="LC167" class="line">access to copy from a designated place, then offering equivalent</span>&#x000A;<span id="LC168" class="line">access to copy the source code from the same place counts as</span>&#x000A;<span id="LC169" class="line">distribution of the source code, even though third parties are not</span>&#x000A;<span id="LC170" class="line">compelled to copy the source along with the object code.</span>&#x000A;<span id="LC171" class="line"></span>&#x000A;<span id="LC172" class="line">  4. You may not copy, modify, sublicense, or distribute the Program</span>&#x000A;<span id="LC173" class="line">except as expressly provided under this License.  Any attempt</span>&#x000A;<span id="LC174" class="line">otherwise to copy, modify, sublicense or distribute the Program is</span>&#x000A;<span id="LC175" class="line">void, and will automatically terminate your rights under this License.</span>&#x000A;<span id="LC176" class="line">However, parties who have received copies, or rights, from you under</span>&#x000A;<span id="LC177" class="line">this License will not have their licenses terminated so long as such</span>&#x000A;<span id="LC178" class="line">parties remain in full compliance.</span>&#x000A;<span id="LC179" class="line"></span>&#x000A;<span id="LC180" class="line">  5. You are not required to accept this License, since you have not</span>&#x000A;<span id="LC181" class="line">signed it.  However, nothing else grants you permission to modify or</span>&#x000A;<span id="LC182" class="line">distribute the Program or its derivative works.  These actions are</span>&#x000A;<span id="LC183" class="line">prohibited by law if you do not accept this License.  Therefore, by</span>&#x000A;<span id="LC184" class="line">modifying or distributing the Program (or any work based on the</span>&#x000A;<span id="LC185" class="line">Program), you indicate your acceptance of this License to do so, and</span>&#x000A;<span id="LC186" class="line">all its terms and conditions for copying, distributing or modifying</span>&#x000A;<span id="LC187" class="line">the Program or works based on it.</span>&#x000A;<span id="LC188" class="line"></span>&#x000A;<span id="LC189" class="line">  6. Each time you redistribute the Program (or any work based on the</span>&#x000A;<span id="LC190" class="line">Program), the recipient automatically receives a license from the</span>&#x000A;<span id="LC191" class="line">original licensor to copy, distribute or modify the Program subject to</span>&#x000A;<span id="LC192" class="line">these terms and conditions.  You may not impose any further</span>&#x000A;<span id="LC193" class="line">restrictions on the recipients&#39; exercise of the rights granted herein.</span>&#x000A;<span id="LC194" class="line">You are not responsible for enforcing compliance by third parties to</span>&#x000A;<span id="LC195" class="line">this License.</span>&#x000A;<span id="LC196" class="line"></span>&#x000A;<span id="LC197" class="line">  7. If, as a consequence of a court judgment or allegation of patent</span>&#x000A;<span id="LC198" class="line">infringement or for any other reason (not limited to patent issues),</span>&#x000A;<span id="LC199" class="line">conditions are imposed on you (whether by court order, agreement or</span>&#x000A;<span id="LC200" class="line">otherwise) that contradict the conditions of this License, they do not</span>&#x000A;<span id="LC201" class="line">excuse you from the conditions of this License.  If you cannot</span>&#x000A;<span id="LC202" class="line">distribute so as to satisfy simultaneously your obligations under this</span>&#x000A;<span id="LC203" class="line">License and any other pertinent obligations, then as a consequence you</span>&#x000A;<span id="LC204" class="line">may not distribute the Program at all.  For example, if a patent</span>&#x000A;<span id="LC205" class="line">license would not permit royalty-free redistribution of the Program by</span>&#x000A;<span id="LC206" class="line">all those who receive copies directly or indirectly through you, then</span>&#x000A;<span id="LC207" class="line">the only way you could satisfy both it and this License would be to</span>&#x000A;<span id="LC208" class="line">refrain entirely from distribution of the Program.</span>&#x000A;<span id="LC209" class="line"></span>&#x000A;<span id="LC210" class="line">If any portion of this section is held invalid or unenforceable under</span>&#x000A;<span id="LC211" class="line">any particular circumstance, the balance of the section is intended to</span>&#x000A;<span id="LC212" class="line">apply and the section as a whole is intended to apply in other</span>&#x000A;<span id="LC213" class="line">circumstances.</span>&#x000A;<span id="LC214" class="line"></span>&#x000A;<span id="LC215" class="line">It is not the purpose of this section to induce you to infringe any</span>&#x000A;<span id="LC216" class="line">patents or other property right claims or to contest validity of any</span>&#x000A;<span id="LC217" class="line">such claims; this section has the sole purpose of protecting the</span>&#x000A;<span id="LC218" class="line">integrity of the free software distribution system, which is</span>&#x000A;<span id="LC219" class="line">implemented by public license practices.  Many people have made</span>&#x000A;<span id="LC220" class="line">generous contributions to the wide range of software distributed</span>&#x000A;<span id="LC221" class="line">through that system in reliance on consistent application of that</span>&#x000A;<span id="LC222" class="line">system; it is up to the author/donor to decide if he or she is willing</span>&#x000A;<span id="LC223" class="line">to distribute software through any other system and a licensee cannot</span>&#x000A;<span id="LC224" class="line">impose that choice.</span>&#x000A;<span id="LC225" class="line"></span>&#x000A;<span id="LC226" class="line">This section is intended to make thoroughly clear what is believed to</span>&#x000A;<span id="LC227" class="line">be a consequence of the rest of this License.</span>&#x000A;<span id="LC228" class="line"></span>&#x000A;<span id="LC229" class="line">  8. If the distribution and/or use of the Program is restricted in</span>&#x000A;<span id="LC230" class="line">certain countries either by patents or by copyrighted interfaces, the</span>&#x000A;<span id="LC231" class="line">original copyright holder who places the Program under this License</span>&#x000A;<span id="LC232" class="line">may add an explicit geographical distribution limitation excluding</span>&#x000A;<span id="LC233" class="line">those countries, so that distribution is permitted only in or among</span>&#x000A;<span id="LC234" class="line">countries not thus excluded.  In such case, this License incorporates</span>&#x000A;<span id="LC235" class="line">the limitation as if written in the body of this License.</span>&#x000A;<span id="LC236" class="line"></span>&#x000A;<span id="LC237" class="line">  9. The Free Software Foundation may publish revised and/or new versions</span>&#x000A;<span id="LC238" class="line">of the General Public License from time to time.  Such new versions will</span>&#x000A;<span id="LC239" class="line">be similar in spirit to the present version, but may differ in detail to</span>&#x000A;<span id="LC240" class="line">address new problems or concerns.</span>&#x000A;<span id="LC241" class="line"></span>&#x000A;<span id="LC242" class="line">Each version is given a distinguishing version number.  If the Program</span>&#x000A;<span id="LC243" class="line">specifies a version number of this License which applies to it and &quot;any</span>&#x000A;<span id="LC244" class="line">later version&quot;, you have the option of following the terms and conditions</span>&#x000A;<span id="LC245" class="line">either of that version or of any later version published by the Free</span>&#x000A;<span id="LC246" class="line">Software Foundation.  If the Program does not specify a version number of</span>&#x000A;<span id="LC247" class="line">this License, you may choose any version ever published by the Free Software</span>&#x000A;<span id="LC248" class="line">Foundation.</span>&#x000A;<span id="LC249" class="line"></span>&#x000A;<span id="LC250" class="line">  10. If you wish to incorporate parts of the Program into other free</span>&#x000A;<span id="LC251" class="line">programs whose distribution conditions are different, write to the author</span>&#x000A;<span id="LC252" class="line">to ask for permission.  For software which is copyrighted by the Free</span>&#x000A;<span id="LC253" class="line">Software Foundation, write to the Free Software Foundation; we sometimes</span>&#x000A;<span id="LC254" class="line">make exceptions for this.  Our decision will be guided by the two goals</span>&#x000A;<span id="LC255" class="line">of preserving the free status of all derivatives of our free software and</span>&#x000A;<span id="LC256" class="line">of promoting the sharing and reuse of software generally.</span>&#x000A;<span id="LC257" class="line"></span>&#x000A;<span id="LC258" class="line">                            NO WARRANTY</span>&#x000A;<span id="LC259" class="line"></span>&#x000A;<span id="LC260" class="line">  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY</span>&#x000A;<span id="LC261" class="line">FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN</span>&#x000A;<span id="LC262" class="line">OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES</span>&#x000A;<span id="LC263" class="line">PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED</span>&#x000A;<span id="LC264" class="line">OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF</span>&#x000A;<span id="LC265" class="line">MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS</span>&#x000A;<span id="LC266" class="line">TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE</span>&#x000A;<span id="LC267" class="line">PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,</span>&#x000A;<span id="LC268" class="line">REPAIR OR CORRECTION.</span>&#x000A;<span id="LC269" class="line"></span>&#x000A;<span id="LC270" class="line">  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING</span>&#x000A;<span id="LC271" class="line">WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR</span>&#x000A;<span id="LC272" class="line">REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,</span>&#x000A;<span id="LC273" class="line">INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING</span>&#x000A;<span id="LC274" class="line">OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED</span>&#x000A;<span id="LC275" class="line">TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY</span>&#x000A;<span id="LC276" class="line">YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER</span>&#x000A;<span id="LC277" class="line">PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE</span>&#x000A;<span id="LC278" class="line">POSSIBILITY OF SUCH DAMAGES.</span>&#x000A;<span id="LC279" class="line"></span>&#x000A;<span id="LC280" class="line">                     END OF TERMS AND CONDITIONS</span></code></pre>&#x000A;
+</div>
+
+</div>
+
+</article>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+

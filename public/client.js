@@ -7,6 +7,7 @@ function client (id, clientName) { // 'x' et 'y' sont les coordinees du centre d
     this._click = [];
     this._snake = [];
     this._name = clientName;
+    this._velocity = [];
 };
 
 module.exports = client;
