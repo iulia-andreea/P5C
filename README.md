@@ -6,12 +6,10 @@
 
 ## << ENGLISH >>                    
 
-#SNAKES GAME is a multiplayer browser game. 
-#Gameplay: Each client that connects to the server controls a snake. The snake moves it's head, with the rest following, to the
-#position of the last click of the client. When the snake collides with another snake or an obstacles, it reapears in a different 
-#random location.
+SNAKES GAME is a multiplayer browser game.   
+Gameplay: Each client that connects to the server controls a snake. The snake moves it's head, with the rest following, to the position of the last click of the client. When the snake collides with another snake or an obstacles, it reapears in a different random location.
 
-##### SETTING UP THE PROJECT               
+## SETTING UP THE PROJECT               
 
 ### 1. INSTALLING NECESSARY MODULES     
 Firstly you need to install NODE and NPM on your machine:  
@@ -66,7 +64,7 @@ Then you have to move the files from the folder where they were created in to "~
 To start the https server you have to run the "~/P5C/public/server.js" file.  
 You can either import the whole project into a IDE and run it from there or just run the file from the terminal.
 
-#####  PLAYING THE GAME     
+##  PLAYING THE GAME     
 To connect as a client to the https server and play the game you have to open a browser and type into the address bar:
 - from the same PC:  
     https://localhost:8081 
@@ -77,7 +75,7 @@ Where :
 - <server_ip> is the IPv4 ip address of the machine that runs the server file,
 - 8081 is the port used by the https server(the server listens to that port).
     
-##### LICENCE     
+## LICENCE     
 
 Code and documentation copyright 2015 Iulia Andreea Balta. You are free to use and modify this code, as per the specifications 
 of the GNU General Public Licence V2 (see LICENCE.txt for a full copy of the licence).
